@@ -1,0 +1,5 @@
+﻿  GameWorld.cpp
+C:\Users\b1032293\Source\repos\FinalProgrammingProject\BugGame\GameWorld.cpp(10,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  main.cpp
+  Generating Code...
+C:\Users\b1032293\Source\repos\FinalProgrammingProject\BugGame\GameWorld.cpp(37): error C4716: 'GameWorld::Initialise': must return a value
