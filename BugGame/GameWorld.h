@@ -13,5 +13,8 @@ private:
 	//sf::RenderWindow window(sf::VideoMode(800, 600), "Final Year Project : B1032293");	
 
 	sf::RenderWindow window;
+
+	int screenWidth{ 800 };
+	int screenHeight{ 600 };
 };
 
