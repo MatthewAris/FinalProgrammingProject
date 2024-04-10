@@ -1,58 +1,34 @@
 #include "GameWorld.h"
-#include <iostream>
-#include <string>
-bool GameWorld::Initialise() {
 
-	std::cout << "BugGame: Starting" << std::endl;
+void GameWorld::Update()
+{
+	m_window.Update();
+	MoveMushroom();
+}
 
+void GameWorld::Render()
+{
+	m_window.BeginDraw();
+	m_window.Draw(m_mushroom);
+	m_window.EndDraw();
+}
 
+void GameWorld::MoveMushroom()
+{
+	sf::Vector2u l_windSize = m_window.GetWindowSize();
+	sf::Vector2u l_textSize = m_mushroomTexture.getSize();
 
-	window.create(sf::VideoMode(screenWidth, screenHeight), "Final Year Project : B1032293");
-
-	srand(time(0));
-
-	float rectXDir = 0.1f;
-	float rectYDir = 0.1f;
-
-	sf::RectangleShape rectangle(sf::Vector2f(128.0f, 128.0f));
-	rectangle.setFillColor(sf::Color::Red);
-	rectangle.setPosition(600, 400);
-	rectangle.setOrigin(rectangle.getSize().x / 2, rectangle.getSize().y / 2);
-
-	// Main loop that continues until we call window.close()
-	while (window.isOpen())
-	{
-		// Handle any pending SFML events		
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			switch (event.type)
-			{
-			case sf::Event::Closed:
-				window.close();
-				break;
-			default:
-				break;
-			}
-		}
-		// We must clear the window each time around the loop
-		window.clear();
-
-		window.draw(rectangle);
-		
-		if (rectangle.getPosition().x > screenWidth - rectangle.getSize().x / 2 || rectangle.getPosition().x < rectangle.getSize().x / 2) {
-			rectXDir = rectXDir * -1;
-		}		
-		if (rectangle.getPosition().y > screenHeight - rectangle.getSize().y / 2 || rectangle.getPosition().y < rectangle.getSize().y / 2) {
-			rectYDir = rectYDir * -1;
-		}
-
-		rectangle.setPosition(rectangle.getPosition().x + rectXDir, rectangle.getPosition().y + rectYDir);
-	
-		// Get the window to display its contents
-		window.display();
-
+	if ((m_mushroom.getPosition().x > l_windSize.x - l_textSize.x && m_increment.x > 0) || 
+		(m_mushroom.getPosition().x < 0 && m_increment.x < 0)) {
+			m_increment.x = -m_increment.x;
 	}
-	std::cout << "BugGame: Finished" << std::endl;
-	return true;
+	if ((m_mushroom.getPosition().y > l_windSize.y - l_textSize.y && m_increment.y > 0) ||
+		(m_mushroom.getPosition().y < 0 && m_increment.y < 0)) {
+			m_increment.y = -m_increment.y;
+	}
+	float fElapsed = m_elapsed.asSeconds();
+
+	m_mushroom.setPosition(
+		m_mushroom.getPosition().x + (m_increment.x * fElapsed),
+		m_mushroom.getPosition().y + (m_increment.y * fElapsed));
 }

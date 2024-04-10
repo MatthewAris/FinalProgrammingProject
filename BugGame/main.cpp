@@ -3,9 +3,13 @@
 
 int main()
 {
-	GameWorld* gameWorld = new GameWorld;
-	if (!gameWorld->Initialise())
-		delete gameWorld;
-	
+	GameWorld game;
+	while (!game.GetWindow()->IsDone()) {
+		game.HandleInput();
+		game.Update();
+		game.Render();
+		//sf::sleep(sf::seconds(0.1));
+		game.RestartClock();
+	}
 	return 0;
 }

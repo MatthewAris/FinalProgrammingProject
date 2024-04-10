@@ -3,33 +3,33 @@
 #include <SFML/Graphics.hpp>
 class Window
 {
+
 public:
 	Window();
 	Window(const std::string& l_title, const sf::Vector2u& l_size);
 	~Window();
 
-	void BeginDraw(); // Clear display
-	void EndDraw(); // Display the changes
+	void BeginDraw() { m_window.clear(sf::Color::Black); } // Clear display
+	void EndDraw() { m_window.display(); } // Display the changes
 	
 	void Update();
 
-	bool IsDone();
-	bool IsFullScreen;
-	sf::Vector2u GetWindowSize();
+	bool IsDone() { return m_isDone; }
+	bool IsFullScreen() { return m_isFullScreen; }
+	sf::Vector2u GetWindowSize() { return m_windowSize; }
 	
 	void ToggleFullScreen();
 	
-	void Draw(sf::Drawable& l_drawable);
-
+	void Draw(sf::Drawable& l_drawable) { m_window.draw(l_drawable); }
+	
 private:
 	void Setup(const std::string& l_title, const sf::Vector2u& l_size);
 	void Destroy();
 	void Create();
-
+	
 	sf::RenderWindow m_window;
 	sf::Vector2u m_windowSize;
 	std::string m_windowTitle;
 	bool m_isDone;
 	bool m_isFullScreen;
 };
-
