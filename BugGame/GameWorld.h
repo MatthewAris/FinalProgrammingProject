@@ -6,14 +6,8 @@
 class GameWorld
 {
 public:
-	GameWorld() : m_window("Game", sf::Vector2u(800, 600))
-	{
-		m_mushroomTexture.loadFromFile("dvd.png");
-		m_mushroom.setTexture(m_mushroomTexture);
-		m_increment = sf::Vector2i(400, 400);
-	}
-	
-	~GameWorld() {};
+	GameWorld();
+	~GameWorld();
 
 	void HandleInput() {};
 	void Update();
