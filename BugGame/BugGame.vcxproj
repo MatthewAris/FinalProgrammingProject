@@ -154,14 +154,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bug.cpp" />
-    <ClCompile Include="GameWorld.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Textbox.cpp" />
     <ClCompile Include="Window.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bug.h" />
-    <ClInclude Include="GameWorld.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Textbox.h" />
     <ClInclude Include="Window.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

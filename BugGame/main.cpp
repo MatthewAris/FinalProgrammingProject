@@ -1,9 +1,9 @@
 //SFML documentation: https://www.sfml-dev.org/learn.php
-#include "GameWorld.h"
+#include "Game.h"
 
 int main()
 {
-	GameWorld game;
+	Game game;
 	while (!game.GetWindow()->IsDone()) {
 		game.HandleInput();
 		game.Update();

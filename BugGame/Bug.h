@@ -24,7 +24,7 @@ public:
 	}
 
 	int GetLives() { return m_lives; }
-	int GetScore() { m_score; }
+	int GetScore() { return m_score; }
 
 	void IncreaseScore() { m_score += 10; }
 	bool HasLost() { return m_lost; }
@@ -38,6 +38,8 @@ public:
 	void Tick();
 	void Cut(int l_segments);
 	void Render(sf::RenderWindow& l_window);
+
+	Direction GetPhysicalDirection();
 
 private:
 	void CheckCollision();
