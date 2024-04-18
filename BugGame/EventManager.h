@@ -1,6 +1,7 @@
 #pragma once
 #include <SFMl/Graphics.hpp>
 #include <unordered_map>
+#include <functional>
 
 enum class EventType {
 	KeyDown = sf::Event::KeyPressed,
@@ -26,8 +27,6 @@ struct EventInfo {
 	};
 };
 
-using Events = std::vector<std::pair<EventType, EventInfo>>;
-
 struct EventDetails {
 	EventDetails(const std::string& l_bindName) : m_name(l_bindName) {
 		Clear();
@@ -49,6 +48,8 @@ struct EventDetails {
 	}
 };
 
+using Events = std::vector<std::pair<EventType, EventInfo>>;
+
 struct Binding {
 	Binding(const std::string& l_name) : m_name(l_name), m_details(l_name), c(0) {}
 	void BindEvent(EventType l_type, EventInfo l_info = EventInfo()) {
@@ -62,7 +63,8 @@ struct Binding {
 	EventDetails m_details;
 };
 
-using Bindings = std::unordered_map<std::string, Bindings*>;
+using Bindings = std::unordered_map<std::string, Binding*>;
+using Callbacks = std::unordered_map<std::string, std::function<void(EventDetails*)>>;
 
 class EventManager {
 public:
@@ -71,7 +73,8 @@ public:
 	
 	bool AddBinding(Binding* l_binding);
 	bool RemoveBinding(std::string l_name);
-	void SetFocus(const bool& l_focus);
+	
+	void SetFocus(const bool& l_focus) { m_hasFocus = l_focus; }
 
 	template <class T>
 	bool AddCallback(const std::string& l_name, void(T::* l_func)(EventDetails*), T* l_instance) {
@@ -79,5 +82,20 @@ public:
 		return m_callbacks.emplace(l_name, temp).second;
 	}
 
-	//  ...
+	void RemoveCallBack(const std::string& l_name) {
+		m_callbacks.erase(l_name);
+	}
+
+	void HandleEvent(sf::Event& l_event);
+	void Update();
+
+	sf::Vector2i GetMousePos(sf::RenderWindow* l_wind = nullptr) {
+		return (l_wind ? sf::Mouse::getPosition(*l_wind) : sf::Mouse::getPosition());
+	}
+private:
+	void LoadBindings();
+
+	Bindings m_bindings;
+	Callbacks m_callbacks;
+	bool m_hasFocus;
 };

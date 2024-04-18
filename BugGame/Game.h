@@ -20,6 +20,8 @@ public:
 	sf::Time GetElapsed() { return m_elapsed; }
 	void RestartClock() { m_elapsed += m_clock.restart(); }
 
+	void MoveSprite(EventDetails* l_details);
+
 private:
 	
 	Window m_window;
@@ -29,5 +31,8 @@ private:
 
 	sf::Clock m_clock;
 	sf::Time m_elapsed;
+
+	sf::Texture m_texture;
+	sf::Sprite m_sprite;
 };
 

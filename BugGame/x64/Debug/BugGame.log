@@ -1,1 +1,12 @@
-﻿
+﻿  Game.cpp
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Game.cpp(67,43): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Game.cpp(67,43): warning C4244:         with
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Game.cpp(67,43): warning C4244:         [
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Game.cpp(67,43): warning C4244:             T=int
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Game.cpp(67,43): warning C4244:         ]
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Game.cpp(67,31): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Game.cpp(67,31): warning C4244:         with
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Game.cpp(67,31): warning C4244:         [
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Game.cpp(67,31): warning C4244:             T=int
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Game.cpp(67,31): warning C4244:         ]
+  BugGame.vcxproj -> C:\Users\b1032293\Source\FinalProgrammingProject\x64\Debug\BugGame.exe
