@@ -12,6 +12,7 @@ enum class Direction { None, Up, Down, Left, Right };
 class Bug
 {
 public:
+	Bug() {};
 	Bug(int l_blockSize);
 	~Bug();
 

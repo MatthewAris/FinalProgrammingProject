@@ -5,6 +5,7 @@
 class World
 {
 public:
+	World() {};
 	World(sf::Vector2u l_windSize);
 	~World();
 

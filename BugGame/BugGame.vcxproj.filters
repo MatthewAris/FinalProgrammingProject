@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\State Files">
+      <UniqueIdentifier>{7dff2eb7-6d5c-4cac-b997-7f722ea7b9f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\StateFiles">
+      <UniqueIdentifier>{bf16b444-3baa-4ad0-84ee-1c2c8d0a0081}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,6 +42,15 @@
     <ClCompile Include="EventManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="StateManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="State_Intro.cpp">
+      <Filter>Source Files\StateFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="State_MainMenu.cpp">
+      <Filter>Source Files\StateFiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -55,6 +70,21 @@
     </ClInclude>
     <ClInclude Include="EventManager.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StateManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseState.h">
+      <Filter>Source Files\StateFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="State_Intro.h">
+      <Filter>Header Files\State Files</Filter>
+    </ClInclude>
+    <ClInclude Include="State_MainMenu.h">
+      <Filter>Header Files\State Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

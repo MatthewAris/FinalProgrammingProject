@@ -1,17 +1,19 @@
 #include "Game.h"
 #include <iostream>
 
-Game::Game() : m_window("Snake", sf::Vector2u(800, 600)), 
-	m_snake(m_world.GetBlockSize()), m_world(sf::Vector2u(800,600))
+Game::Game() : m_window("Chapter 5",  sf::Vector2u(800,600)), m_stateManager(&m_context)
 {
 	m_textbox.Setup(5, 14, 360, sf::Vector2f(255, 0));
 
-	m_textbox.Add("Seeded Ranfom Number Generator With: " + std::to_string(time(NULL)));
+	//m_textbox.Add("Seeded Ranfom Number Generator With: " + std::to_string(time(NULL)));
+	//m_texture.loadFromFile("Data/dvd.png");
+	//m_sprite.setTexture(m_texture);
 
-	m_texture.loadFromFile("Data/dvd.png");
-	m_sprite.setTexture(m_texture);
+	//m_window.GetEventManager()->AddCallback("Intro_Continue", &Game::, this);
 
-	m_window.GetEventManager()->AddCallback("Move", &Game::MoveSprite, this);
+	m_context.m_wind = &m_window;
+	m_context.m_eventManager = m_window.GetEventManager();
+	m_stateManager.SwitchTo(StateType::Intro);
 }
 
 Game::~Game() {}
@@ -35,29 +37,13 @@ void Game::HandleInput()
 void Game::Update()
 {
 	m_window.Update();
-
-	float timestep = 1.0f / m_snake.GetSpeed();
-
-	if (m_elapsed.asSeconds() >= timestep) {
-		m_snake.Tick();
-		m_world.Update(m_snake, m_textbox);
-		m_elapsed -= sf::seconds(timestep);
-		if (m_snake.HasLost()) {			
-			m_textbox.Add("GAME OVER!! Score: " + std::to_string(m_snake.GetScore()));
-			m_snake.Reset();			
-		}
-	}		
+	m_stateManager.Update(m_elapsed);
 }
 
 void Game::Render()
 {
 	m_window.BeginDraw();
-	
-	m_world.Render(*m_window.GetRenderWindow());
-	m_snake.Render(*m_window.GetRenderWindow());
-	m_textbox.Render(*m_window.GetRenderWindow());
-	m_window.Draw(m_sprite);
-
+	m_stateManager.Draw();
 	m_window.EndDraw();
 }
 
@@ -66,4 +52,10 @@ void Game::MoveSprite(EventDetails* l_details)
 	sf::Vector2i mousepos = m_window.GetEventManager()->GetMousePos(m_window.GetRenderWindow());
 	m_sprite.setPosition(mousepos.x, mousepos.y);
 	std::cout << "Moving sprite to: " << mousepos.x << ":" << mousepos.y << std::endl;
+}
+
+void Game::LateUpdate()
+{
+	m_stateManager.ProcessRequests();
+	RestartClock();
 }

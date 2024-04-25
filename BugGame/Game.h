@@ -5,7 +5,7 @@
 #include "World.h"
 #include "Bug.h"
 #include "Textbox.h"
-
+#include "StateManager.h"
 class Game
 {
 public:
@@ -22,8 +22,10 @@ public:
 
 	void MoveSprite(EventDetails* l_details);
 
+	void LateUpdate();
+
 private:
-	
+
 	Window m_window;
 	World m_world;
 	Bug m_snake;
@@ -34,5 +36,9 @@ private:
 
 	sf::Texture m_texture;
 	sf::Sprite m_sprite;
+
+	StateType m_state;
+	StateManager m_stateManager;
+	SharedContext m_context;
 };
 

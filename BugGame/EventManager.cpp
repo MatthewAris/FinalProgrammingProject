@@ -103,9 +103,19 @@ void EventManager::Update()
 		}
 
 		if (bind->m_events.size() == bind->c) {
-			auto callItr = m_callbacks.find(bind->m_name);
-			if (callItr != m_callbacks.end()) {
-				callItr->second(&bind->m_details);
+			auto stateCallbacks = m_callbacks.find(m_currentState);
+			auto otherCallbacks = m_callbacks.find(StateType(0));
+			if (stateCallbacks != m_callbacks.end()) {
+				auto callItr = stateCallbacks->second.find(bind->m_name);
+				if (callItr != stateCallbacks->second.end()) {
+					callItr->second(&bind->m_details);
+				}
+			}
+			if (otherCallbacks != m_callbacks.end()) {
+				auto callItr = otherCallbacks->second.find(bind->m_name);
+				if (callItr != otherCallbacks->second.end()){
+					callItr->second(&bind->m_details);
+				}
 			}
 		}
 		bind->c = 0;
@@ -118,7 +128,7 @@ void EventManager::LoadBindings()
 	std::string delimiter = ":";
 	
 	std::ifstream bindings;
-	bindings.open("keys.cfg");
+	bindings.open("Data/keys.cfg");
 	if (!bindings.is_open()) {
 		std::cout << "! Failed loading keys.cfg." << std::endl;
 		return;

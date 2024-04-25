@@ -5,11 +5,9 @@ int main()
 {
 	Game game;
 	while (!game.GetWindow()->IsDone()) {
-		game.HandleInput();
 		game.Update();
 		game.Render();
-		//sf::sleep(sf::seconds(0.1));
-		game.RestartClock();
+		game.LateUpdate();
 	}
 	return 0;
 }

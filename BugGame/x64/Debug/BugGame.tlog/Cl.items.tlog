@@ -2,6 +2,9 @@ C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Bug.cpp;C:\Users\b10322
 C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\EventManager.cpp;C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\x64\Debug\EventManager.obj
 C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Game.cpp;C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\x64\Debug\Game.obj
 C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\main.cpp;C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\x64\Debug\main.obj
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\StateManager.cpp;C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\x64\Debug\StateManager.obj
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\State_Intro.cpp;C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\x64\Debug\State_Intro.obj
+C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\State_MainMenu.cpp;C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\x64\Debug\State_MainMenu.obj
 C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Textbox.cpp;C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\x64\Debug\Textbox.obj
 C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\Window.cpp;C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\x64\Debug\Window.obj
 C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\World.cpp;C:\Users\b1032293\Source\FinalProgrammingProject\BugGame\x64\Debug\World.obj
