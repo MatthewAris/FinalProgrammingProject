@@ -40,13 +40,13 @@ void State_MainMenu::OnCreate()
 	}
 	
 	EventManager* evMgr = m_stateMgr->GetContext()->m_eventManager;
-	evMgr->AddCallback(StateType::MainMenu, "Mouse_Left", &State_MainMenu::MouseClick, this);
+	evMgr->AddCallback(StateType::MainMenu, "Mouse_left", &State_MainMenu::MouseClick, this);
 }
 
 void State_MainMenu::OnDestroy()
 {
 	EventManager* evMgr = m_stateMgr->GetContext()->m_eventManager;
-	evMgr->RemoveCallBack(StateType::MainMenu, "Mouse_Left");
+	evMgr->RemoveCallBack(StateType::MainMenu, "Mouse_left");
 }
 
 void State_MainMenu::Activate()
@@ -55,7 +55,6 @@ void State_MainMenu::Activate()
 		m_labels[0].setString(sf::String("RESUME"));
 		sf::FloatRect rect = m_labels[0].getLocalBounds();
 		m_labels[0].setOrigin(rect.left + rect.width / 2.0f, rect.top + rect.height / 2.0f);
-
 	}
 }
 

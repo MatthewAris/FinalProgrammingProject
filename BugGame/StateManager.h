@@ -6,6 +6,9 @@
 #include "SharedContext.h"
 #include "BaseState.h"
 #include "State_Intro.h"
+#include "State_MainMenu.h"
+#include "State_Game.h"
+#include "State_Paused.h"
 
 using StateContainer = std::vector<std::pair<StateType, BaseState* >> ;
 using TypeContainer = std::vector <StateType>;

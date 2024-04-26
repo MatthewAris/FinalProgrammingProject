@@ -27,7 +27,8 @@ public:
 	void Close(EventDetails* l_details = nullptr) { m_isDone = true; }
 	
 	void Draw(sf::Drawable& l_drawable) { m_window.draw(l_drawable); }
-	
+
+	sf::FloatRect GetViewSpace();
 private:
 	void Setup(const std::string& l_title, const sf::Vector2u& l_size);
 	void Destroy();

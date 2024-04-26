@@ -51,6 +51,21 @@
     <ClCompile Include="State_MainMenu.cpp">
       <Filter>Source Files\StateFiles</Filter>
     </ClCompile>
+    <ClCompile Include="State_Game.cpp">
+      <Filter>Source Files\StateFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="State_Paused.cpp">
+      <Filter>Source Files\StateFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteSheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Anim_Base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Anim_Directional.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -74,17 +89,44 @@
     <ClInclude Include="StateManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SharedContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseState.h">
-      <Filter>Source Files\StateFiles</Filter>
-    </ClInclude>
     <ClInclude Include="State_Intro.h">
       <Filter>Header Files\State Files</Filter>
     </ClInclude>
     <ClInclude Include="State_MainMenu.h">
       <Filter>Header Files\State Files</Filter>
+    </ClInclude>
+    <ClInclude Include="State_Game.h">
+      <Filter>Header Files\State Files</Filter>
+    </ClInclude>
+    <ClInclude Include="State_Paused.h">
+      <Filter>Header Files\State Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseState.h">
+      <Filter>Header Files\State Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteSheet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Directions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Anim_Base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Anim_Directional.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -84,7 +84,7 @@ public:
 		auto itr = m_callbacks.emplace(l_state, CallbackContainer()).first;
 		auto temp = std::bind(l_func, l_instance, std::placeholders::_1);
 		return itr->second.emplace(l_name, temp).second;
-	}
+ 	}
 
 	bool RemoveCallBack(StateType l_state, const std::string& l_name) {
 		auto itr = m_callbacks.find(l_state);
