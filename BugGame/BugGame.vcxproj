@@ -156,9 +156,12 @@
     <ClCompile Include="Anim_Base.cpp" />
     <ClCompile Include="Anim_Directional.cpp" />
     <ClCompile Include="Bug.cpp" />
+    <ClCompile Include="EntityBase.cpp" />
+    <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="SpriteSheet.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="State_Game.cpp" />
@@ -167,7 +170,6 @@
     <ClCompile Include="State_Paused.cpp" />
     <ClCompile Include="Textbox.cpp" />
     <ClCompile Include="Window.cpp" />
-    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Anim_Base.h" />
@@ -175,8 +177,11 @@
     <ClInclude Include="BaseState.h" />
     <ClInclude Include="Bug.h" />
     <ClInclude Include="Directions.h" />
+    <ClInclude Include="EntityBase.h" />
+    <ClInclude Include="EntityManager.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SharedContext.h" />
     <ClInclude Include="SpriteSheet.h" />
@@ -189,7 +194,6 @@
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Utilities.h" />
     <ClInclude Include="Window.h" />
-    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
