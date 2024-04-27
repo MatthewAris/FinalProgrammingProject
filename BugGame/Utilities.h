@@ -1,7 +1,7 @@
 #pragma once
 #define RUNNING_WINDOWS
 #include <iostream>
-#include <string>
+#include <cstring>
 #include <algorithm>
 
 namespace Utils {
@@ -9,17 +9,17 @@ namespace Utils {
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <Shlwapi.h>
-	inline std::string GetWorkingDirectory() {
-		HMODULE hModule = GetModuleHandle(nullptr);
-		if (hModule) {
-			char path[256];
-			GetModuleFileName(hModule, path, sizeof(path));
-			PathRemoveFileSpec(path);
-			strcat_s(path, "\\"); // new
-			return std::string(path); // new
-		}
-		return "";
-	}
+    inline std::string GetWorkingDirectory() {
+        HMODULE hModule = GetModuleHandle(0);
+        if (hModule) {
+            char path[256];
+            GetModuleFileNameA(hModule, path, sizeof(path));
+            PathRemoveFileSpecA(path);
+            strcat_s(path, "\\");
+            return std::string(path);
+        }
+        return "";
+    }
 #elif defined RUNNING_LINUX
 #include <unistd.h>
 	inline std::string GetWorkingDirectory() {
@@ -30,4 +30,7 @@ namespace Utils {
 		return ";"
 	}
 	#endif
+    inline std::string GetResourceDirectory() {
+        return GetWorkingDirectory() + std::string("Resources/");
+    }
 }

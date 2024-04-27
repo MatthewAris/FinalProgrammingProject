@@ -1,5 +1,8 @@
 #include "EntityBase.h"
 #include "EntityManager.h"
+#include "SharedContext.h"
+#include "Map.h"
+#include <cmath>
 
 void EntityBase::Move(float l_x, float l_y)
 {
@@ -109,9 +112,61 @@ void EntityBase::CheckCollisions()
 	int fromY = floor(m_AABB.top / tileSize);
 	int toY = floor((m_AABB.top + m_AABB.height) / tileSize);
 
-	for (int x = fromX; x <)
+	for (int x = fromX; x <= toX; ++x) {
+		for (int y = fromY; y <= toY; ++y) {
+			Tile* tile = gameMap->GetTile(x, y);
+			if (!tile) { continue; }
+			sf::FloatRect tileBounds(x * tileSize, y * tileSize, tileSize, tileSize);
+			sf::FloatRect intersection;
+			m_AABB.intersects(tileBounds, intersection);
+			float area = intersection.width * intersection.height;
+
+			CollisionElement e(area, tile->m_properties, tileBounds);
+			m_collisions.emplace_back(e);
+			if (tile->m_warp && m_type == EntityType::Player) {
+				gameMap->LoadNext();
+			}
+		}
+	}
 }
 
 void EntityBase::ResolveCollisions()
 {
+	if (!m_collisions.empty()) {
+		std::sort(m_collisions.begin(), m_collisions.end(), SortCollisions);
+		Map* gameMap = m_entityManager->GetContext()->m_gameMap;
+		unsigned int tileSize = gameMap->GetTileSize();
+		for (auto& itr : m_collisions) {
+			if (!m_AABB.intersects(itr.m_tileBounds)) { continue; }	
+			float xDiff = (m_AABB.left + (m_AABB.width / 2)) - (itr.m_tileBounds.left + (itr.m_tileBounds.width / 2));
+			float yDiff = (m_AABB.top + (m_AABB.height / 2)) - (itr.m_tileBounds.top + (itr.m_tileBounds.height / 2));
+			float resolve = 0;
+			if (abs(xDiff) > abs(yDiff)) {
+				if (xDiff > 0) {
+					resolve = (itr.m_tileBounds.left + tileSize) - m_AABB.left;
+				}
+				else {
+					resolve = (m_AABB.left + tileSize) - itr.m_tileBounds.left;
+				}
+				Move(resolve, 0);
+				m_velocity.x = 0;
+				m_collidingOnX = true;
+			}
+			else {
+				if (yDiff > 0) {
+					resolve = (itr.m_tileBounds.top + tileSize) - m_AABB.top;
+				}
+				else {
+					resolve = -((m_AABB.top + m_AABB.height) - itr.m_tileBounds.top);
+				}
+				Move(0, resolve);
+				m_velocity.y = 0;
+				if (m_collidingOnY) { continue; }
+				m_referenceTile = itr.m_tile;
+				m_collidingOnY = true;
+			}
+		}
+		m_collisions.clear();
+	}
+	if (!m_collidingOnY) { m_referenceTile = nullptr; }
 }

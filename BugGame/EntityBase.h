@@ -1,9 +1,13 @@
 #pragma once
+#include <string>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
-#include "Map.h"
 
 enum class EntityType{ Base, Enemy, Player };
 enum class EntityState{ Idle, Walking, Jumping, Attacking, Hurt, Dying };
+
+struct TileInfo;
 
 struct CollisionElement {
 	CollisionElement(float l_area, TileInfo* l_info, const sf::FloatRect& l_bounds) : 
@@ -34,6 +38,12 @@ public:
 		if (m_state == EntityState::Dying) { return; } 
 		m_state = l_state; 
 	}
+	const sf::Vector2f& GetSize() const { return m_size; }
+	std::string GetName() const { return m_name; }
+	EntityState GetState() const { return m_state; }
+	unsigned int GetId() const { return m_id; }
+	EntityType GetType() const { return m_type; }
+	const sf::Vector2f& GetPosition() const { return m_position; }
 
 	void Move(float l_x, float l_y);
 	void AddVelocity(float l_x, float l_y);

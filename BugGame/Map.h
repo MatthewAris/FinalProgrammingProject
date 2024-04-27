@@ -1,6 +1,12 @@
 #pragma once
+#include <SFML/Graphics.hpp>
+#include <unordered_map>
+#include <map>
+#include <array>
+#include <fstream>
+#include <sstream>
+#include "Utilities.h"
 #include "SharedContext.h"
-#include "TextureManager.h"
 #include "BaseState.h"
 
 enum Sheet { Tile_Size = 32, Sheet_Width = 256, Sheet_Height = 256 };
@@ -17,7 +23,7 @@ struct TileInfo {
 		m_id = l_id;
 		m_sprite.setTexture(*tmgr->GetResource(m_texture));
 		sf::IntRect tileBoundaries(m_id % (Sheet::Sheet_Width / Sheet::Tile_Size) * Sheet::Tile_Size, 
-			m_id / (Sheet::Sheet_Height / Sheet::Tile_Size) * Sheet::Tile_Size);
+			m_id / (Sheet::Sheet_Height / Sheet::Tile_Size) * Sheet::Tile_Size, Sheet::Tile_Size, Sheet::Tile_Size);
 		m_sprite.setTextureRect(tileBoundaries);
 	}
 

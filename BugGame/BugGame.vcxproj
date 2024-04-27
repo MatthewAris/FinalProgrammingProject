@@ -156,6 +156,7 @@
     <ClCompile Include="Anim_Base.cpp" />
     <ClCompile Include="Anim_Directional.cpp" />
     <ClCompile Include="Bug.cpp" />
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="EntityBase.cpp" />
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="EventManager.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Anim_Directional.h" />
     <ClInclude Include="BaseState.h" />
     <ClInclude Include="Bug.h" />
+    <ClInclude Include="Character.h" />
     <ClInclude Include="Directions.h" />
     <ClInclude Include="EntityBase.h" />
     <ClInclude Include="EntityManager.h" />

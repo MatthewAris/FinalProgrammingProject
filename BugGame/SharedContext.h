@@ -3,7 +3,8 @@
 #include "EventManager.h"
 #include "TextureManager.h"
 #include "EntityManager.h"
-#include "Map.h"
+
+class Map;
 
 enum class StateType {
 	Intro = 1, MainMenu, Game, Paused, GameOver, Credits

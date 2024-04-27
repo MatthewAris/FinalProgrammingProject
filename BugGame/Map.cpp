@@ -1,6 +1,6 @@
 #include "Map.h"
-#include <fstream>
-#include <sstream>
+#include "StateManager.h"
+#include <cmath>
 
 Map::Map(SharedContext* l_context, BaseState* l_currentState) : m_context(l_context), 
 m_defaultTile(l_context), m_maxMapSize(32,32), m_tileCount(0), m_tileSetCount(0), 
