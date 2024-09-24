@@ -1,30 +1,30 @@
 #pragma once
 #include "BaseState.h"
-class State_MainMenu :
-    public BaseState
-{
+#include "EventManager.h"
+
+class State_MainMenu : public BaseState {
 public:
-    State_MainMenu(StateManager* l_stateManager) : BaseState(l_stateManager) {};
-    ~State_MainMenu() {};
+	State_MainMenu(StateManager* l_stateManager);
+	~State_MainMenu();
 
-    void OnCreate();
-    void OnDestroy();
+	void OnCreate();
+	void OnDestroy();
 
-    void Activate();
-    void Deactivate() {};
+	void Activate();
+	void Deactivate() {}
 
-    void Update(const sf::Time& l_time) {};
-    void Draw();
+	void Update(const sf::Time& l_time) {}
+	void Draw();
 
-    void MouseClick(EventDetails* l_details);
+	void MouseClick(EventDetails* l_details);
 private:
-    sf::Text m_text;
-    sf::Font m_font;
+	sf::Font m_font;
+	sf::Text m_text;
 
-    sf::Vector2f m_buttonSize;
-    sf::Vector2f m_buttonPos;
-    unsigned int m_buttonPadding;
+	sf::Vector2f m_buttonSize;
+	sf::Vector2f m_buttonPos;
+	unsigned int m_buttonPadding;
 
-    sf::RectangleShape m_rects[3];
-    sf::Text m_labels[3];
+	sf::RectangleShape m_rects[3];
+	sf::Text m_labels[3];
 };

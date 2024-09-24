@@ -1,20 +1,23 @@
 #pragma once
 #include <vector>
 #include <unordered_map>
-#include <functional>
-#include <SFML/System/Time.hpp>
-#include "SharedContext.h"
-#include "BaseState.h"
 #include "State_Intro.h"
+#include "State_MainMenu.h"
+#include "State_Game.h"
+#include "State_Paused.h"
+#include "SharedContext.h"
 
-using StateContainer = std::vector<std::pair<StateType, BaseState* >> ;
-using TypeContainer = std::vector <StateType>;
+enum class StateType { Intro = 1, MainMenu, Game, Paused, GameOver, Credits };
+
+// State container.
+using StateContainer = std::vector<std::pair<StateType, BaseState*>>;
+// Type container.
+using TypeContainer = std::vector<StateType>;
+// State factory.
 using StateFactory = std::unordered_map<StateType, std::function<BaseState* (void)>>;
 
-class StateManager
-{
+class StateManager {
 public:
-	StateManager() {};
 	StateManager(SharedContext* l_shared);
 	~StateManager();
 
@@ -22,14 +25,14 @@ public:
 	void Draw();
 
 	void ProcessRequests();
-	
-	SharedContext* GetContext() { return m_shared; }
+
+	SharedContext* GetContext();
 	bool HasState(const StateType& l_type);
 
 	void SwitchTo(const StateType& l_type);
-	void Remove(const StateType& l_type) { m_toRemove.push_back(l_type); }
-
+	void Remove(const StateType& l_type);
 private:
+	// Methods.
 	void CreateState(const StateType& l_type);
 	void RemoveState(const StateType& l_type);
 
@@ -40,9 +43,10 @@ private:
 				return new T(this);
 			};
 	}
+
+	// Members.
 	SharedContext* m_shared;
 	StateContainer m_states;
 	TypeContainer m_toRemove;
 	StateFactory m_stateFactory;
 };
-

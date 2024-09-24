@@ -28,7 +28,7 @@ void State_Intro::OnCreate()
 void State_Intro::OnDestroy()
 {
 	EventManager* evMgr = m_stateMgr->GetContext()->m_eventManager;
-	evMgr->RemoveCallBack(StateType::Intro, "Intro_Continue");
+	evMgr->RemoveCallback(StateType::Intro, "Intro_Continue");
 }
 
 void State_Intro::Update(const sf::Time& l_time)

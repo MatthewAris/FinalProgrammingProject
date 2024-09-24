@@ -1,7 +1,7 @@
 //SFML documentation: https://www.sfml-dev.org/learn.php
 #include "Game.h"
 
-int main()
+void main(int argc, void** argv[])
 {
 	Game game;
 	while (!game.GetWindow()->IsDone()) {
@@ -9,5 +9,4 @@ int main()
 		game.Render();
 		game.LateUpdate();
 	}
-	return 0;
 }

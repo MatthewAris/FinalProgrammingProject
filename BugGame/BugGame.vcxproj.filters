@@ -30,13 +30,7 @@
     <ClCompile Include="Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Bug.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="World.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Textbox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EventManager.cpp">
@@ -51,6 +45,12 @@
     <ClCompile Include="State_MainMenu.cpp">
       <Filter>Source Files\StateFiles</Filter>
     </ClCompile>
+    <ClCompile Include="State_Game.cpp">
+      <Filter>Source Files\StateFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="State_Paused.cpp">
+      <Filter>Source Files\StateFiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -59,13 +59,7 @@
     <ClInclude Include="Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Bug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="World.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Textbox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EventManager.h">
@@ -77,13 +71,19 @@
     <ClInclude Include="SharedContext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BaseState.h">
-      <Filter>Source Files\StateFiles</Filter>
-    </ClInclude>
     <ClInclude Include="State_Intro.h">
       <Filter>Header Files\State Files</Filter>
     </ClInclude>
     <ClInclude Include="State_MainMenu.h">
+      <Filter>Header Files\State Files</Filter>
+    </ClInclude>
+    <ClInclude Include="State_Game.h">
+      <Filter>Header Files\State Files</Filter>
+    </ClInclude>
+    <ClInclude Include="State_Paused.h">
+      <Filter>Header Files\State Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseState.h">
       <Filter>Header Files\State Files</Filter>
     </ClInclude>
   </ItemGroup>

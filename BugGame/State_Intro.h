@@ -1,5 +1,7 @@
 #pragma once
 #include "BaseState.h"
+#include "EventManager.h"
+
 class State_Intro : public BaseState
 {
 public:

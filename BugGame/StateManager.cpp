@@ -1,29 +1,28 @@
 #include "StateManager.h"
 
-StateManager::StateManager(SharedContext* l_shared) :m_shared(l_shared)
+StateManager::StateManager(SharedContext* l_shared)
+	: m_shared(l_shared)
 {
 	RegisterState<State_Intro>(StateType::Intro);
-	//RegisterState<State_MainMenu>(StateType::MainMenu);
-	//RegisterState<State_Game>(StateType::Game);
-	//RegisterState<State_Paused>(StateType::Paused);
+	RegisterState<State_MainMenu>(StateType::MainMenu);
+	RegisterState<State_Game>(StateType::Game);
+	RegisterState<State_Paused>(StateType::Paused);
 }
 
-StateManager::~StateManager()
-{
+StateManager::~StateManager() {
 	for (auto& itr : m_states) {
 		itr.second->OnDestroy();
 		delete itr.second;
 	}
 }
 
-void StateManager::Update(const sf::Time& l_time)
-{
+void StateManager::Update(const sf::Time& l_time) {
 	if (m_states.empty()) { return; }
-	if (m_states.back().second->IsTranscendant() && m_states.size() > 1) {
+	if (m_states.back().second->IsTranscendent() && m_states.size() > 1) {
 		auto itr = m_states.end();
 		while (itr != m_states.begin()) {
 			if (itr != m_states.end()) {
-				if (!itr->second->IsTranscendant()) {
+				if (!itr->second->IsTranscendent()) {
 					break;
 				}
 			}
@@ -38,11 +37,9 @@ void StateManager::Update(const sf::Time& l_time)
 	}
 }
 
-void StateManager::Draw()
-{
+void StateManager::Draw() {
 	if (m_states.empty()) { return; }
-	if (m_states.back().second->IsTransparent() && m_states.size() > 1)
-	{
+	if (m_states.back().second->IsTransparent() && m_states.size() > 1) {
 		auto itr = m_states.end();
 		while (itr != m_states.begin()) {
 			if (itr != m_states.end()) {
@@ -61,17 +58,12 @@ void StateManager::Draw()
 	}
 }
 
-void StateManager::ProcessRequests()
-{
-	while (m_toRemove.begin() != m_toRemove.end()) {
-		RemoveState(*m_toRemove.begin());
-		m_toRemove.erase(m_toRemove.begin());
-	}
-}
+SharedContext* StateManager::GetContext() { return m_shared; }
 
-bool StateManager::HasState(const StateType& l_type)
-{
-	for (auto itr = m_states.begin(); itr != m_states.end(); ++itr) {
+bool StateManager::HasState(const StateType& l_type) {
+	for (auto itr = m_states.begin();
+		itr != m_states.end(); ++itr)
+	{
 		if (itr->first == l_type) {
 			auto removed = std::find(m_toRemove.begin(), m_toRemove.end(), l_type);
 			if (removed == m_toRemove.end()) { return true; }
@@ -81,10 +73,18 @@ bool StateManager::HasState(const StateType& l_type)
 	return false;
 }
 
-void StateManager::SwitchTo(const StateType& l_type)
-{
+void StateManager::ProcessRequests() {
+	while (m_toRemove.begin() != m_toRemove.end()) {
+		RemoveState(*m_toRemove.begin());
+		m_toRemove.erase(m_toRemove.begin());
+	}
+}
+
+void StateManager::SwitchTo(const StateType& l_type) {
 	m_shared->m_eventManager->SetCurrentState(l_type);
-	for (auto itr = m_states.begin(); itr != m_states.end(); ++itr) {
+	for (auto itr = m_states.begin();
+		itr != m_states.end(); ++itr)
+	{
 		if (itr->first == l_type) {
 			m_states.back().second->Deactivate();
 			StateType tmp_type = itr->first;
@@ -96,13 +96,19 @@ void StateManager::SwitchTo(const StateType& l_type)
 		}
 	}
 
+	// State with l_type wasn't found.
 	if (!m_states.empty()) { m_states.back().second->Deactivate(); }
 	CreateState(l_type);
 	m_states.back().second->Activate();
 }
 
-void StateManager::CreateState(const StateType& l_type)
-{
+void StateManager::Remove(const StateType& l_type) {
+	m_toRemove.push_back(l_type);
+}
+
+// Private methods.
+
+void StateManager::CreateState(const StateType& l_type) {
 	auto newState = m_stateFactory.find(l_type);
 	if (newState == m_stateFactory.end()) { return; }
 	BaseState* state = newState->second();
@@ -110,9 +116,10 @@ void StateManager::CreateState(const StateType& l_type)
 	state->OnCreate();
 }
 
-void StateManager::RemoveState(const StateType& l_type)
-{
-	for (auto itr = m_states.begin(); itr != m_states.end(); ++itr) {
+void StateManager::RemoveState(const StateType& l_type) {
+	for (auto itr = m_states.begin();
+		itr != m_states.end(); ++itr)
+	{
 		if (itr->first == l_type) {
 			itr->second->OnDestroy();
 			delete itr->second;
