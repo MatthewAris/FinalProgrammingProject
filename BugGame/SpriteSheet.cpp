@@ -135,3 +135,4 @@ void SpriteSheet::SetDirection(const Direction& l_dir)
 	m_direction = l_dir;
 	m_animationCurrent->CropSprite();
 }
+

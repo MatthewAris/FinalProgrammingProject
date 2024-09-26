@@ -56,3 +56,4 @@ void State_Game::MainMenu(EventDetails* l_details) {
 void State_Game::Pause(EventDetails* l_details) {
 	m_stateMgr->SwitchTo(StateType::Paused);
 }
+

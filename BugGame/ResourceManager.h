@@ -72,7 +72,7 @@ private:
 		if (itr == m_resources.end()) { return false; }
 		delete itr->second.first;
 		m_resources.erase(itr);
-		return false;
+		return true;
 	}
 
 	void LoadPaths(const std::string& l_pathFile) {
@@ -91,9 +91,11 @@ private:
 			paths.close();
 			return;
 		}
+
 		std::cerr << "! Failed loading the path file: " << l_pathFile << std::endl;
 	}
 
+private:
 	std::unordered_map<std::string, std::pair<T*, unsigned int>> m_resources;
 	std::unordered_map<std::string, std::string> m_paths;
 };

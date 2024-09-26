@@ -50,7 +50,7 @@ void State_Intro::Draw()
 
 void State_Intro::Continue(EventDetails* l_details)
 {
-	if (m_timePassed < 5.0f) {
+	if (m_timePassed >= 5.0f) {
 		m_stateMgr->SwitchTo(StateType::MainMenu);
 		m_stateMgr->Remove(StateType::Intro);
 	}

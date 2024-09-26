@@ -5,8 +5,12 @@ Game::Game() : m_window("Chapter 5",  sf::Vector2u(800,600)), m_stateManager(&m_
 	m_clock.restart();
 	srand(time(nullptr));
 
+	m_clock.restart();
+	srand(time(nullptr));
+
 	m_context.m_wind = &m_window;
 	m_context.m_eventManager = m_window.GetEventManager();
+
 	m_stateManager.SwitchTo(StateType::Intro);
 }
 

@@ -10,15 +10,13 @@ Anim_Base::~Anim_Base() {}
 void Anim_Base::SetFrame(Frame l_frame) {
 	if ((l_frame >= m_frameStart && l_frame <= m_frameEnd) ||
 		(l_frame >= m_frameEnd && l_frame <= m_frameStart))
-	{
+	{	
 		m_frameCurrent = l_frame;
 	}
 }
 
 bool Anim_Base::IsInAction() {
-	if (m_frameActionStart == -1 || m_frameActionEnd == -1) {
-		return true;
-	}
+	if (m_frameActionStart == -1 || m_frameActionEnd == -1) { return true; }
 	return (m_frameCurrent >= m_frameActionStart && m_frameCurrent <= m_frameActionEnd);
 }
 
@@ -63,3 +61,4 @@ float Anim_Base::GetElapsedTime() { return m_elapsedTime; }
 std::string Anim_Base::GetName() { return m_name; }
 bool Anim_Base::IsLooping() { return m_loop; }
 bool Anim_Base::IsPlaying() { return m_playing; }
+

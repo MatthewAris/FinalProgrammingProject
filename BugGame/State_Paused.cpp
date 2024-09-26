@@ -13,6 +13,7 @@ void State_Paused::OnCreate()
 	sf::Vector2u windowSize = m_stateMgr->GetContext()->m_wind->GetRenderWindow()->getSize();
 
 	sf::FloatRect textRect = m_text.getLocalBounds();
+
 	m_text.setOrigin(textRect.left + textRect.width / 2.0f,
 		textRect.top + textRect.height / 2.0f);
 	m_text.setPosition(windowSize.x / 2.0f, windowSize.y / 2.0f);
@@ -41,3 +42,4 @@ void State_Paused::Draw()
 void State_Paused::Unpause(EventDetails* l_details) {
 	m_stateMgr->SwitchTo(StateType::Game);
 }
+

@@ -11,3 +11,4 @@ C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(12
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Generating Code...
   BugGame.vcxproj -> C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\x64\Debug\BugGame.exe
+

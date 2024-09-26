@@ -2,7 +2,7 @@
 #include "ResourceManager.h"
 #include <SFML/Graphics/Texture.hpp>
 
-class TextureManager : public ResourceManager < TextureManager, sf::Texture>
+class TextureManager : public ResourceManager <TextureManager, sf::Texture>
 {
 public:
 	TextureManager(): ResourceManager("Data/textures.cfg") {}
@@ -12,7 +12,7 @@ public:
 		if (!texture->loadFromFile(Utils::GetWorkingDirectory() + l_path)) {
 			delete texture;
 			texture = nullptr;
-			std::cerr << "!Failed to load texture: " << l_path << std::endl;
+			std::cerr << "! Failed to load texture: " << l_path << std::endl;
 		}
 		return texture;
 	}

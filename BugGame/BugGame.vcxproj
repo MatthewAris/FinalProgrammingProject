@@ -165,7 +165,6 @@
     <ClCompile Include="State_MainMenu.cpp" />
     <ClCompile Include="State_Paused.cpp" />
     <ClCompile Include="Window.cpp" />
-    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Anim_Base.h" />
@@ -186,7 +185,6 @@
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Utilities.h" />
     <ClInclude Include="Window.h" />
-    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BugGame.rc" />

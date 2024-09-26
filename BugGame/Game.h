@@ -24,6 +24,7 @@ private:
 	StateManager m_stateManager;
 	sf::Clock m_clock;
 	sf::Time m_elapsed;
+	
 	void RestartClock() { m_elapsed = m_clock.restart(); }
 };
 

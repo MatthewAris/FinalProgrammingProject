@@ -1,6 +1,7 @@
 #pragma once
 #include "Window.h"
 #include "EventManager.h"
+
 struct SharedContext {
 	SharedContext()
 		:m_wind(nullptr),
@@ -8,3 +9,4 @@ struct SharedContext {
 	Window* m_wind;
 	EventManager* m_eventManager;
 };
+
