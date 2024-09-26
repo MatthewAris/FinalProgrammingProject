@@ -2,9 +2,6 @@
 // SFML header file for graphics, there are also ones for Audio, Window, System and Network
 #include <SFML/Graphics.hpp>
 #include "Window.h"
-#include "World.h"
-#include "Bug.h"
-#include "Textbox.h"
 #include "StateManager.h"
 class Game
 {
@@ -27,9 +24,6 @@ public:
 private:
 
 	Window m_window;
-	World m_world;
-	Bug m_snake;
-	Textbox m_textbox;
 
 	sf::Clock m_clock;
 	sf::Time m_elapsed;

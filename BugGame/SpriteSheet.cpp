@@ -1,6 +1,4 @@
 #include "SpriteSheet.h"
-#include <fstream>
-#include <sstream>
 
 void SpriteSheet::SetSpriteSize(const sf::Vector2i& l_size)
 {

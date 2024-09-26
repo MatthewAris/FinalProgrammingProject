@@ -5,7 +5,7 @@ Anim_Base::Anim_Base() : m_frameCurrent(0), m_frameStart(0), m_frameEnd(0),
 	m_frameRow(0), m_frameTime(0.0f), m_elapsedTime(0.0f), m_frameActionStart(-1), 
 	m_frameActionEnd(-1),m_loop(false), m_playing(false) {}
 
-void Anim_Base::SetFrame(const unsigned int& l_frame)
+void Anim_Base::SetFrame(Frame l_frame)
 {
 	if ((l_frame >= m_frameStart && l_frame <= m_frameEnd) ||
 		(l_frame >= m_frameEnd && l_frame <= m_frameStart)) {

@@ -1,7 +1,7 @@
 #pragma once
-#include <sstream>
-
+#include <string>
 class SpriteSheet;
+
 using Frame = unsigned int;
 
 class Anim_Base
@@ -12,8 +12,10 @@ public:
 	virtual ~Anim_Base() {};
 
 	void SetSpriteSheet(SpriteSheet* l_sheet) { m_spriteSheet = l_sheet; }
-	void SetFrame(const unsigned int& l_frame);
+	void SetFrame(Frame l_frame);
 	void SetName(const std::string l_name) { m_name = l_name; }
+	void SetLooping(bool l_loop) { m_loop = l_loop; }
+
 	bool IsInAction();
 
 	void Play() { m_playing = true; }

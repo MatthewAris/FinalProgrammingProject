@@ -1,6 +1,9 @@
 #pragma once
-#include <unordered_map>
 #include <string>
+#include <unordered_map>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 #include "Utilities.h"
 
 template<typename Derived, typename T>
@@ -40,7 +43,7 @@ public:
 	bool ReleaseResource(const std::string& l_id) {
 		auto res = Find(l_id);
 		if (!res) { return false; }
-		--res->second();
+		--res->second;
 		if (!res->second) { Unload(l_id); }
 		return true;
 	}
