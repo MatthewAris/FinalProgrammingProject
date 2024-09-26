@@ -1,3 +1,13 @@
-﻿  EventManager.cpp
-C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EventManager.cpp(158,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  Anim_Base.cpp
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Anim_Base.cpp(22,25): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Anim_Base.cpp(22,65): warning C4018: '<=': signed/unsigned mismatch
+  Anim_Directional.cpp
+  SpriteSheet.cpp
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,53): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,53): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,53): warning C4244:             T=int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,53): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   BugGame.vcxproj -> C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\x64\Debug\BugGame.exe
