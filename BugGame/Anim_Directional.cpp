@@ -25,5 +25,5 @@ void Anim_Directional::CropSprite()
 
 void Anim_Directional::ReadIn(std::stringstream& l_stream)
 {
-	l_stream >> m_frameStart >> m_frameEnd >> m_frameRow 
+	l_stream >> m_frameStart >> m_frameEnd >> m_frameRow;
 }

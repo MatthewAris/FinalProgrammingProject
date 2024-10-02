@@ -155,9 +155,15 @@
   <ItemGroup>
     <ClCompile Include="Anim_Base.cpp" />
     <ClCompile Include="Anim_Directional.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EntityBase.cpp" />
+    <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="SpriteSheet.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="State_Game.cpp" />
@@ -170,9 +176,16 @@
     <ClInclude Include="Anim_Base.h" />
     <ClInclude Include="Anim_Directional.h" />
     <ClInclude Include="BaseState.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="DebugOverlay.h" />
     <ClInclude Include="Directions.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EntityBase.h" />
+    <ClInclude Include="EntityManager.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SharedContext.h" />

@@ -48,7 +48,7 @@ void State_MainMenu::OnCreate() {
 	}
 
 	EventManager* evMgr = m_stateMgr->GetContext()->m_eventManager;
-	evMgr->AddCallback(StateType::MainMenu, "Mouse_left", &State_MainMenu::MouseClick, this);
+	evMgr->AddCallback(StateType::MainMenu, "Mouse_Left", &State_MainMenu::MouseClick, this);
 }
 
 void State_MainMenu::OnDestroy() {

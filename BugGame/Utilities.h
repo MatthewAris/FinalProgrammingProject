@@ -30,4 +30,8 @@ namespace Utils {
 		return "";
 	}
 #endif
+
+	inline std::string GetResourceDirectory() {
+		return GetWorkingDirectory() + std::string("Resources/");
+	}
 }

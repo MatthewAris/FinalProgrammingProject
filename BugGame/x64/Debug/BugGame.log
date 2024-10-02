@@ -1,14 +1,123 @@
-﻿  Anim_Base.cpp
-C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Anim_Base.cpp(22,25): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Anim_Base.cpp(22,65): warning C4018: '<=': signed/unsigned mismatch
-  Anim_Directional.cpp
-  SpriteSheet.cpp
-C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,53): warning C4244:         with
-C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,53): warning C4244:         [
-C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,53): warning C4244:             T=int
-C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,53): warning C4244:         ]
-C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp(124,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  Character.cpp
+  EntityBase.cpp
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.h(21,26): error C2027: use of undefined type 'SharedContext'
+  (compiling source file 'EntityBase.cpp')
+      C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityManager.h(12,8):
+      see declaration of 'SharedContext'
+  
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.h(35,3): error C2027: use of undefined type 'SharedContext'
+  (compiling source file 'EntityBase.cpp')
+      C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityManager.h(12,8):
+      see declaration of 'SharedContext'
+  
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(55,34): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(55,34): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(55,34): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(55,34): warning C4244:             T=unsigned int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(55,34): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(55,34): warning C4244:         and
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(55,34): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(55,34): warning C4244:             T=float
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(55,34): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(62,34): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(62,34): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(62,34): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(62,34): warning C4244:             T=unsigned int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(62,34): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(62,34): warning C4244:         and
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(62,34): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(62,34): warning C4244:             T=float
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(62,34): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(151,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(152,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(153,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(154,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,67): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,67): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,67): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,67): warning C4244:             T=float
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,67): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,57): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,57): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,57): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,57): warning C4244:             T=float
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,57): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,45): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,45): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,45): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,45): warning C4244:             T=float
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,45): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,31): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,31): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,31): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,31): warning C4244:             T=float
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityBase.cpp(160,31): warning C4244:         ]
+  EntityManager.cpp
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.h(21,26): error C2027: use of undefined type 'SharedContext'
+  (compiling source file 'EntityManager.cpp')
+      C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityManager.h(12,8):
+      see declaration of 'SharedContext'
+  
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.h(35,3): error C2027: use of undefined type 'SharedContext'
+  (compiling source file 'EntityManager.cpp')
+      C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EntityManager.h(12,8):
+      see declaration of 'SharedContext'
+  
+  Game.cpp
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Game.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  main.cpp
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\main.cpp(4,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Map.cpp
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(52,21): warning C4018: '>': signed/unsigned mismatch
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(52,54): warning C4018: '>': signed/unsigned mismatch
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(174,72): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(174,72): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(174,72): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(174,72): warning C4244:             T=int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(174,72): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(174,30): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(174,30): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(174,30): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(174,30): warning C4244:             T=int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(174,30): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(176,7): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(176,7): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(176,7): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(176,7): warning C4244:             T=int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(176,7): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(175,27): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(175,27): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(175,27): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(175,27): warning C4244:             T=int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(175,27): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(185,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(185,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(194,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp(194,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Player.cpp
+  StateManager.cpp
+  State_Game.cpp
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(11,29): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(11,29): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(11,29): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(11,29): warning C4244:             T=unsigned int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(11,29): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(11,21): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(11,21): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(11,21): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(11,21): warning C4244:             T=unsigned int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(11,21): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(12,38): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(12,38): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(12,38): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(12,38): warning C4244:             T=unsigned int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(12,38): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(12,26): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(12,26): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(12,26): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(12,26): warning C4244:             T=unsigned int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(12,26): warning C4244:         ]
+  State_Intro.cpp
+  State_MainMenu.cpp
+  State_Paused.cpp
   Generating Code...
-  BugGame.vcxproj -> C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\x64\Debug\BugGame.exe
-
