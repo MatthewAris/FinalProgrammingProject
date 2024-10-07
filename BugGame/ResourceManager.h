@@ -7,9 +7,7 @@
 #include "Utilities.h"
 
 template<typename Derived, typename T>
-
-class ResourceManager
-{
+class ResourceManager {
 public:
 	ResourceManager(const std::string& l_pathsFile) {
 		LoadPaths(l_pathsFile);
@@ -50,17 +48,20 @@ public:
 	}
 
 	void PurgeResources() {
+		std::cout << "Purging all resources:" << std::endl;
 		while (m_resources.begin() != m_resources.end()) {
+			std::cout << "Removing: "
+				<< m_resources.begin()->first << std::endl;
 			delete m_resources.begin()->second.first;
 			m_resources.erase(m_resources.begin());
 		}
+		std::cout << "Purging finished." << std::endl;
 	}
 
 protected:
 	T* Load(const std::string& l_path) {
 		return static_cast<Derived*>(this)->Load(l_path);
 	}
-
 private:
 	std::pair<T*, unsigned int>* Find(const std::string& l_id) {
 		auto itr = m_resources.find(l_id);
@@ -77,7 +78,7 @@ private:
 
 	void LoadPaths(const std::string& l_pathFile) {
 		std::ifstream paths;
-		paths.open(Utils::GetWorkingDirectory() + l_pathFile);
+		paths.open(Utils::GetResourceDirectory() + l_pathFile);
 		if (paths.is_open()) {
 			std::string line;
 			while (std::getline(paths, line)) {
@@ -91,12 +92,10 @@ private:
 			paths.close();
 			return;
 		}
-
 		std::cerr << "! Failed loading the path file: " << l_pathFile << std::endl;
 	}
 
-private:
-	std::unordered_map<std::string, std::pair<T*, unsigned int>> m_resources;
+	std::unordered_map<std::string,
+		std::pair<T*, unsigned int>> m_resources;
 	std::unordered_map<std::string, std::string> m_paths;
 };
-

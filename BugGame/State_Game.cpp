@@ -1,11 +1,18 @@
 #include "State_Game.h"
 #include "StateManager.h"
 
-void State_Game::OnCreate()
-{
-	EventManager* evMgr = m_stateMgr->GetContext()->m_eventManager;
+State_Game::State_Game(StateManager* l_stateManager)
+	: BaseState(l_stateManager) {}
+
+State_Game::~State_Game() {}
+
+void State_Game::OnCreate() {
+	EventManager* evMgr = m_stateMgr->
+		GetContext()->m_eventManager;
+
 	evMgr->AddCallback(StateType::Game, "Key_Escape", &State_Game::MainMenu, this);
 	evMgr->AddCallback(StateType::Game, "Key_P", &State_Game::Pause, this);
+	//evMgr->AddCallback(StateType::Game, "Key_O", &State_Game::ToggleOverlay, this);
 
 	sf::Vector2u size = m_stateMgr->GetContext()->m_wind->GetWindowSize();
 	m_view.setSize(size.x, size.y);
@@ -17,17 +24,18 @@ void State_Game::OnCreate()
 	m_gameMap->LoadMap("media/Maps/map1.map");
 }
 
-void State_Game::OnDestroy()
-{
-	EventManager* evMgr = m_stateMgr->GetContext()->m_eventManager;
+void State_Game::OnDestroy() {
+	EventManager* evMgr = m_stateMgr->
+		GetContext()->m_eventManager;
 	evMgr->RemoveCallback(StateType::Game, "Key_Escape");
 	evMgr->RemoveCallback(StateType::Game, "Key_P");
+	evMgr->RemoveCallback(StateType::Game, "Key_O");
+
 	delete m_gameMap;
 	m_gameMap = nullptr;
 }
 
-void State_Game::Update(const sf::Time& l_time)
-{
+void State_Game::Update(const sf::Time& l_time) {
 	SharedContext* context = m_stateMgr->GetContext();
 	EntityBase* player = context->m_entityManager->Find("Player");
 	if (!player) {
@@ -68,3 +76,9 @@ void State_Game::Pause(EventDetails* l_details) {
 	m_stateMgr->SwitchTo(StateType::Paused);
 }
 
+void State_Game::Activate() {}
+void State_Game::Deactivate() {}
+// Test/debug methods.
+//void State_Game::ToggleOverlay(EventDetails* l_details) {
+//	m_stateMgr->GetContext()->m_debugOverlay.SetDebug(!m_stateMgr->GetContext()->m_debugOverlay.Debug());
+//}

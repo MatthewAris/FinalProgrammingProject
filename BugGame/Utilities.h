@@ -32,6 +32,6 @@ namespace Utils {
 #endif
 
 	inline std::string GetResourceDirectory() {
-		return GetWorkingDirectory() + std::string("Resources/");
+		return std::string("Resources/");
 	}
 }

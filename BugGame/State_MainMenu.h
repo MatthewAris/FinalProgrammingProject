@@ -11,9 +11,9 @@ public:
 	void OnDestroy();
 
 	void Activate();
-	void Deactivate() {}
+	void Deactivate();
 
-	void Update(const sf::Time& l_time) {}
+	void Update(const sf::Time& l_time);
 	void Draw();
 
 	void MouseClick(EventDetails* l_details);

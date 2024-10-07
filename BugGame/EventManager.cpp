@@ -135,12 +135,12 @@ void EventManager::Update() {
 	}
 }
 
-void EventManager::LoadBindings() {
+void EventManager::LoadBindings() 
+{
 	std::string delimiter = ":";
 
 	std::ifstream bindings;
-	bindings.open("keys.cfg");
-	if (!bindings.is_open()) { std::cout << "! Failed loading keys.cfg." << std::endl; return; }
+	bindings.open(Utils::GetResourceDirectory() + "keys.cfg");
 	std::string line;
 	while (std::getline(bindings, line)) {
 		std::stringstream keystream(line);

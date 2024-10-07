@@ -3,14 +3,12 @@
 #include "EventManager.h"
 #include "TextureManager.h"
 #include "EntityManager.h"
-#include "Map.h"
-#include"DebugOverlay.h"
+#include "DebugOverlay.h"
 
 class Map;
-
 struct SharedContext {
-	SharedContext()
-		:m_wind(nullptr),
+	SharedContext() :
+		m_wind(nullptr),
 		m_eventManager(nullptr),
 		m_textureManager(nullptr),
 		m_entityManager(nullptr),

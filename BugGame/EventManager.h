@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "Utilities.h"
 
 enum class EventType {
 	KeyDown = sf::Event::KeyPressed,
