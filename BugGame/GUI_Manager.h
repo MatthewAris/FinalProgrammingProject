@@ -15,17 +15,17 @@
 using GUI_Interfaces = std::map<std::string, GUI_Interface*>;
 using GUI_Container = std::unordered_map<StateType, GUI_Interfaces>;
 using GUI_Events = std::unordered_map<StateType, std::vector<GUI_Event>>;
-using GUI_Factory = std::unordered_map<GUI_ElementType, std::function<GUI_Element* (GUI_Interface*)>>;
-using GUI_ElemTypes = std::unordered_map <std::string, GUI_ElementType>;
+using GUI_Factory = std::unordered_map<GUI_ElementType, std::function<GUI_Element*(GUI_Interface*)>>;
+using GUI_ElemTypes = std::unordered_map <std::string,GUI_ElementType>;
 
 struct SharedContext;
-class GUI_Manager {
+class GUI_Manager{
 	friend class GUI_Interface;
 public:
 	GUI_Manager(EventManager* l_evMgr, SharedContext* l_shared);
 	~GUI_Manager();
 
-	bool AddInterface(const StateType& l_state,
+	bool AddInterface(const StateType& l_state, 
 		const std::string& l_name);
 	GUI_Interface* GetInterface(const StateType& l_state,
 		const std::string& l_name);
@@ -52,9 +52,9 @@ public:
 	void Render(sf::RenderWindow* l_wind);
 
 	template<class T>
-	void RegisterElement(const GUI_ElementType& l_id) {
+	void RegisterElement(const GUI_ElementType& l_id){
 		m_factory[l_id] = [](GUI_Interface* l_owner) -> GUI_Element*
-			{ return new T("", l_owner); };
+		{ return new T("",l_owner); };
 	}
 private:
 	GUI_Element* CreateElement(const GUI_ElementType& l_id, GUI_Interface* l_owner);

@@ -52,6 +52,12 @@
     <Filter Include="Header Files\GUI">
       <UniqueIdentifier>{72380f77-2338-43d5-b19b-c320f92e51eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Textures">
+      <UniqueIdentifier>{9a9a84b8-aa69-4641-8d0b-33729a8f0f6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Textures">
+      <UniqueIdentifier>{371e9b57-62d4-404a-8536-9a688a5c841a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -78,22 +84,10 @@
     <ClCompile Include="State_Paused.cpp">
       <Filter>Source Files\StateFiles</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteSheet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Anim_Base.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Anim_Directional.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="S_Base.cpp">
-      <Filter>Source Files\ECS\System</Filter>
-    </ClCompile>
-    <ClCompile Include="SystemManager.cpp">
       <Filter>Source Files\ECS\System</Filter>
     </ClCompile>
     <ClCompile Include="Message.h">
@@ -101,9 +95,6 @@
     </ClCompile>
     <ClCompile Include="S_Renderer.cpp">
       <Filter>Source Files\ECS\System</Filter>
-    </ClCompile>
-    <ClCompile Include="EntityManager.cpp">
-      <Filter>Source Files\ECS\Entities</Filter>
     </ClCompile>
     <ClCompile Include="S_State.cpp">
       <Filter>Source Files\StateFiles</Filter>
@@ -123,9 +114,6 @@
     <ClCompile Include="S_Collision.cpp">
       <Filter>Source Files\ECS\System</Filter>
     </ClCompile>
-    <ClCompile Include="State_GameOver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GUI_Element.cpp">
       <Filter>Source Files\GUI</Filter>
     </ClCompile>
@@ -143,6 +131,24 @@
     </ClCompile>
     <ClCompile Include="GUI_Scrollbar.cpp">
       <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Manager.cpp">
+      <Filter>Source Files\ECS\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity_Manager.cpp">
+      <Filter>Source Files\ECS\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Anim_Directional.cpp">
+      <Filter>Source Files\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="Anim_Base.cpp">
+      <Filter>Source Files\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteSheet.cpp">
+      <Filter>Source Files\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="State_GameOver.cpp">
+      <Filter>Source Files\StateFiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -173,28 +179,10 @@
     <ClInclude Include="BaseState.h">
       <Filter>Header Files\State Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Utilities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteSheet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Directions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Anim_Base.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Anim_Directional.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
@@ -212,19 +200,10 @@
     <ClInclude Include="C_Position.h">
       <Filter>Header Files\ECS\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Bitmask.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EntityEvents.h">
       <Filter>Header Files\ECS\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="EventQueue.h">
-      <Filter>Header Files\ECS\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="S_Base.h">
-      <Filter>Header Files\ECS\System</Filter>
-    </ClInclude>
-    <ClInclude Include="SystemManager.h">
       <Filter>Header Files\ECS\System</Filter>
     </ClInclude>
     <ClInclude Include="MessageHandler.h">
@@ -275,9 +254,6 @@
     <ClInclude Include="C_Collidable.h">
       <Filter>Header Files\ECS\Component</Filter>
     </ClInclude>
-    <ClInclude Include="EntityManager.h">
-      <Filter>Header Files\ECS\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="S_Collision.h">
       <Filter>Header Files\ECS\System</Filter>
     </ClInclude>
@@ -311,13 +287,37 @@
     <ClInclude Include="GUI_Scrollbar.h">
       <Filter>Header Files\GUI</Filter>
     </ClInclude>
+    <ClInclude Include="System_Manager.h">
+      <Filter>Header Files\ECS\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity_Manager.h">
+      <Filter>Header Files\ECS\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Event_Queue.h">
+      <Filter>Header Files\ECS\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Anim_Base.h">
+      <Filter>Header Files\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="Anim_Directional.h">
+      <Filter>Header Files\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitmask.h">
+      <Filter>Header Files\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteSheet.h">
+      <Filter>Header Files\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Header Files\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BugGame.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

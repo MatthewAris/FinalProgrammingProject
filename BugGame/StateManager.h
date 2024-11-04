@@ -6,18 +6,18 @@
 #include "State_MainMenu.h"
 #include "State_Game.h"
 #include "State_Paused.h"
-//#include "State_GameOver.h"
+#include "State_GameOver.h"
 
-enum class StateType { Intro = 1, MainMenu, Game, Paused, GameOver, Credits };
+enum class StateType{ Intro = 1, MainMenu, Game, Paused, GameOver, Credits };
 
 // State container.
 using StateContainer = std::vector<std::pair<StateType, BaseState*>>;
 // Type container.
 using TypeContainer = std::vector<StateType>;
 // State factory.
-using StateFactory = std::unordered_map<StateType, std::function<BaseState* (void)>>;
+using StateFactory = std::unordered_map<StateType, std::function<BaseState*(void)>>;
 
-class StateManager {
+class StateManager{
 public:
 	StateManager(SharedContext* l_shared);
 	~StateManager();
@@ -38,11 +38,11 @@ private:
 	void RemoveState(const StateType& l_type);
 
 	template<class T>
-	void RegisterState(const StateType& l_type) {
+	void RegisterState(const StateType& l_type){
 		m_stateFactory[l_type] = [this]() -> BaseState*
-			{
-				return new T(this);
-			};
+		{
+			return new T(this);
+		};
 	}
 
 	// Members.

@@ -2,11 +2,11 @@
 #include "StateManager.h"
 
 State_Paused::State_Paused(StateManager* l_stateManager)
-	: BaseState(l_stateManager) {}
+	: BaseState(l_stateManager){}
 
-State_Paused::~State_Paused() {}
+State_Paused::~State_Paused(){}
 
-void State_Paused::OnCreate() {
+void State_Paused::OnCreate(){
 	SetTransparent(true); // Set our transparency flag.
 	m_font.loadFromFile(Utils::GetResourceDirectory() + "media/Fonts/arial.ttf");
 	m_text.setFont(m_font);
@@ -23,32 +23,32 @@ void State_Paused::OnCreate() {
 	m_text.setPosition(windowSize.x / 2.0f, windowSize.y / 2.0f);
 
 	m_rect.setSize(sf::Vector2f(windowSize));
-	m_rect.setPosition(0, 0);
-	m_rect.setFillColor(sf::Color(0, 0, 0, 150));
+	m_rect.setPosition(0,0);
+	m_rect.setFillColor(sf::Color(0,0,0,150));
 
 	EventManager* evMgr = m_stateMgr->
 		GetContext()->m_eventManager;
-	evMgr->AddCallback(StateType::Paused, "Key_P",
-		&State_Paused::Unpause, this);
+	evMgr->AddCallback(StateType::Paused,"Key_P",
+		&State_Paused::Unpause,this);
 }
 
-void State_Paused::OnDestroy() {
+void State_Paused::OnDestroy(){
 	EventManager* evMgr = m_stateMgr->
 		GetContext()->m_eventManager;
 	evMgr->RemoveCallback(StateType::Paused, "Key_P");
 }
 
-void State_Paused::Draw() {
+void State_Paused::Draw(){
 	sf::RenderWindow* wind = m_stateMgr->
 		GetContext()->m_wind->GetRenderWindow();
 	wind->draw(m_rect);
 	wind->draw(m_text);
 }
 
-void State_Paused::Unpause(EventDetails* l_details) {
+void State_Paused::Unpause(EventDetails* l_details){
 	m_stateMgr->SwitchTo(StateType::Game);
 }
 
-void State_Paused::Activate() {}
-void State_Paused::Deactivate() {}
-void State_Paused::Update(const sf::Time& l_time) {}
+void State_Paused::Activate(){}
+void State_Paused::Deactivate(){}
+void State_Paused::Update(const sf::Time& l_time){}

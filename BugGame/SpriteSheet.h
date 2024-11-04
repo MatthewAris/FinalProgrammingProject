@@ -6,9 +6,9 @@
 #include "Utilities.h"
 #include <unordered_map>
 
-using Animations = std::unordered_map<std::string, Anim_Base*>;
+using Animations = std::unordered_map<std::string,Anim_Base*>;
 
-class SpriteSheet {
+class SpriteSheet{
 public:
 	SpriteSheet(TextureManager* l_textMgr);
 	~SpriteSheet();

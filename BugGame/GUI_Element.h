@@ -13,13 +13,13 @@ using ElementStyles = std::unordered_map<GUI_ElementState, GUI_Style>;
 
 class GUI_Interface;
 
-class GUI_Element {
-	friend GUI_Interface;
+class GUI_Element{
+	friend class GUI_Interface;
 public:
 	GUI_Element(const std::string& l_name, const GUI_ElementType& l_type, GUI_Interface* l_owner);
 	virtual ~GUI_Element();
 
-	// Event methods
+	// Event methods.
 	virtual void ReadIn(std::stringstream& l_stream) = 0;
 	virtual void OnClick(const sf::Vector2f& l_mousePos) = 0;
 	virtual void OnRelease() = 0;
@@ -28,10 +28,10 @@ public:
 	virtual void Update(float l_dT) = 0;
 	virtual void Draw(sf::RenderTarget* l_target) = 0;
 
+	// Non pure-virtual methods.
 	virtual void UpdateStyle(const GUI_ElementState& l_state, const GUI_Style& l_style);
 	virtual void ApplyStyle();
-	
-	// Getters & Setters
+
 	GUI_ElementType GetType();
 
 	const std::string& GetName() const;
@@ -54,12 +54,12 @@ public:
 	std::string GetText() const;
 	void SetText(const std::string& l_text);
 
-	friend std::stringstream& operator >>(std::stringstream& l_stream, GUI_Element& b)
+	friend std::stringstream& operator >>(
+		std::stringstream& l_stream, GUI_Element& b)
 	{
 		b.ReadIn(l_stream);
 		return l_stream;
 	}
-
 protected:
 	void ApplyTextStyle();
 	void ApplyBgStyle();
@@ -69,12 +69,11 @@ protected:
 	void RequireFont(const std::string& l_name);
 	void ReleaseTexture(const std::string& l_name);
 	void ReleaseFont(const std::string& l_name);
-	void ReleaseResource();
-
+	void ReleaseResources();
 	std::string m_name;
 	sf::Vector2f m_position;
-	ElementStyles m_style; // Style of drawables
-	GUI_Visual m_visual; // Drawable bits
+	ElementStyles m_style; // Style of drawables.
+	GUI_Visual m_visual; // Drawable bits.
 	GUI_ElementType m_type;
 	GUI_ElementState m_state;
 	GUI_Interface* m_owner;

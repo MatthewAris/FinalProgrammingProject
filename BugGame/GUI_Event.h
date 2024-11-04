@@ -1,16 +1,17 @@
 #pragma once
+#include <string>
 
-enum class GUI_EventType { None, Click, Release, Hover, Leave };
+enum class GUI_EventType{ None, Click, Release, Hover, Leave };
 
-struct ClickCoordinate {
+struct ClickCoordinates{
 	float x, y;
 };
 
-struct GUI_Event {
+struct GUI_Event{
 	GUI_EventType m_type;
 	const char* m_element;
 	const char* m_interface;
-	union {
-		ClickCoordinate m_clickCoords;
+	union{
+		ClickCoordinates m_clickCoords;
 	};
 };

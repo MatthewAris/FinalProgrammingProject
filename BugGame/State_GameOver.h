@@ -2,7 +2,7 @@
 #include "BaseState.h"
 #include "EventManager.h"
 
-class State_GameOver : public BaseState {
+class State_GameOver : public BaseState{
 public:
 	State_GameOver(StateManager* l_stateManager);
 	~State_GameOver();

@@ -4,14 +4,14 @@
 #include "TextureManager.h"
 #include "FontManager.h"
 #include "GUI_Manager.h"
-#include "SystemManager.h"
-#include "EntityManager.h"
+#include "System_Manager.h"
+#include "Entity_Manager.h"
 #include "DebugOverlay.h"
 
 class Map;
 
-struct SharedContext {
-	SharedContext() :
+struct SharedContext{
+	SharedContext():
 		m_wind(nullptr),
 		m_eventManager(nullptr),
 		m_textureManager(nullptr),
@@ -19,7 +19,7 @@ struct SharedContext {
 		m_systemManager(nullptr),
 		m_entityManager(nullptr),
 		m_gameMap(nullptr),
-		m_guiManager(nullptr) {}
+		m_guiManager(nullptr){}
 
 	Window* m_wind;
 	EventManager* m_eventManager;

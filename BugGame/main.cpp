@@ -1,12 +1,14 @@
-//SFML documentation: https://www.sfml-dev.org/learn.php
 #include "Game.h"
 
-void main(int argc, void** argv[])
-{
-	Game game;
-	while (!game.GetWindow()->IsDone()) {
-		game.Update();
-		game.Render();
-		game.LateUpdate();
+int main(int argc, char* argv[]){
+	// Program entry point.
+	{
+		Game game;
+		while(!game.GetWindow()->IsDone()){
+			game.Update();
+			game.Render();
+			game.LateUpdate();
+		}
 	}
+	system("PAUSE");
 }

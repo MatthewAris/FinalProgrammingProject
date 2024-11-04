@@ -1,9 +1,9 @@
 #pragma once
 #include "BaseState.h"
 #include "Map.h"
-#include "EventManager.h"
+#include <SFML/Graphics.hpp>
 
-class State_Game : public BaseState {
+class State_Game : public BaseState{
 public:
 	State_Game(StateManager* l_stateManager);
 	~State_Game();
@@ -22,10 +22,9 @@ public:
 	void PlayerMove(EventDetails* l_details);
 
 	// Debug:
-	//void ToggleOverlay(EventDetails* l_details);
+	void ToggleOverlay(EventDetails* l_details);
 private:
 	void UpdateCamera();
-
 	Map* m_gameMap;
 	int m_player;
 };

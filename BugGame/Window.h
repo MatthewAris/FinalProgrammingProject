@@ -5,7 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include "EventManager.h"
 
-class Window {
+class Window{
 public:
 	Window();
 	Window(const std::string& title, const sf::Vector2u& size);
@@ -27,7 +27,6 @@ public:
 	EventManager* GetEventManager();
 	sf::Vector2u GetWindowSize();
 	sf::FloatRect GetViewSpace();
-
 private:
 	void Setup(const std::string& title, const sf::Vector2u& size);
 	void Create();

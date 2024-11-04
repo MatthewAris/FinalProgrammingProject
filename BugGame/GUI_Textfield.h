@@ -1,8 +1,7 @@
 #pragma once
 #include "GUI_Element.h"
 
-class GUI_Textfield : public GUI_Element
-{
+class GUI_Textfield : public GUI_Element{
 public:
 	GUI_Textfield(const std::string& l_name, GUI_Interface* l_owner);
 	~GUI_Textfield();
@@ -15,4 +14,3 @@ public:
 	void Update(float l_dT);
 	void Draw(sf::RenderTarget* l_target);
 };
-

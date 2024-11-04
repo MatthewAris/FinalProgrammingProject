@@ -5,7 +5,7 @@
 #include "TextureManager.h"
 #include <iostream>
 
-class Game {
+class Game{
 public:
 	Game();
 	~Game();
@@ -31,4 +31,3 @@ private:
 	GUI_Manager m_guiManager;
 	StateManager m_stateManager;
 };
-

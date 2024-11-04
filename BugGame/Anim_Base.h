@@ -1,21 +1,20 @@
 #pragma once
 #include <string>
-class SpriteSheet;
-
 using Frame = unsigned int;
 
-class Anim_Base
-{
+class SpriteSheet;
+class Anim_Base{
 	friend class SpriteSheet;
 public:
 	Anim_Base();
 	virtual ~Anim_Base();
 
 	void SetSpriteSheet(SpriteSheet* l_sheet);
-	void SetFrame(Frame l_frame);
+
+	bool SetFrame(Frame l_frame);
 	void SetStartFrame(Frame l_frame);
 	void SetEndFrame(Frame l_frame);
-	void SetFrameRow(Frame l_row);
+	void SetFrameRow(unsigned int l_row);
 	void SetActionStart(Frame l_frame);
 	void SetActionEnd(Frame l_frame);
 	void SetFrameTime(float l_time);
@@ -23,10 +22,11 @@ public:
 	void SetName(const std::string& l_name);
 
 	SpriteSheet* GetSpriteSheet();
+
 	Frame GetFrame();
 	Frame GetStartFrame();
 	Frame GetEndFrame();
-	Frame GetFrameRow();
+	unsigned int GetFrameRow();
 	int GetActionStart();
 	int GetActionEnd();
 	float GetFrameTime();
@@ -34,15 +34,18 @@ public:
 	bool IsLooping();
 	bool IsPlaying();
 	bool IsInAction();
+	bool CheckMoved();
 	std::string GetName();
 
 	void Play();
 	void Pause();
 	void Stop();
 	void Reset();
-	virtual void Update(const float& l_dT);
 
-	friend std::stringstream& operator >>(std::stringstream& l_stream, Anim_Base& a) 
+	virtual void Update(float l_dT);
+
+	friend std::stringstream& operator >>(
+		std::stringstream& l_stream, Anim_Base& a)
 	{
 		a.ReadIn(l_stream);
 		return l_stream;
@@ -56,13 +59,15 @@ protected:
 	Frame m_frameStart;
 	Frame m_frameEnd;
 	Frame m_frameRow;
-	int m_frameActionStart; // Frame when a specific "action" begins
-	int m_frameActionEnd; // Frame when a specific "action" ends
+	int m_frameActionStart;
+	int m_frameActionEnd;
 	float m_frameTime;
 	float m_elapsedTime;
 	bool m_loop;
 	bool m_playing;
+	bool m_hasMoved;
+
 	std::string m_name;
+
 	SpriteSheet* m_spriteSheet;
 };
-

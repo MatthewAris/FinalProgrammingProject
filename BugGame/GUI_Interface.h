@@ -6,11 +6,11 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
-using Elements = std::unordered_map<std::string, GUI_Element*>;
+using Elements = std::unordered_map<std::string,GUI_Element*>;
 
 class GUI_Manager;
 
-class GUI_Interface : public GUI_Element {
+class GUI_Interface : public GUI_Element{
 	friend class GUI_Element;
 	friend class GUI_Manager;
 public:
@@ -35,9 +35,9 @@ public:
 	void ReadIn(std::stringstream& l_stream);
 	void OnClick(const sf::Vector2f& l_mousePos);
 	void OnRelease();
-	void OnTextEntered(const char& l_char);
 	void OnHover(const sf::Vector2f& l_mousePos);
 	void OnLeave();
+	void OnTextEntered(const char& l_char);
 
 	bool IsBeingMoved() const;
 	bool IsMovable() const;
@@ -64,18 +64,18 @@ public:
 
 	void UpdateScrollHorizontal(unsigned int l_percent);
 	void UpdateScrollVertical(unsigned int l_percent);
-
 private:
 	void DefocusTextfields();
 	Elements m_elements;
 	sf::Vector2f m_elementPadding;
+
 	GUI_Interface* m_parent;
 	GUI_Manager* m_guiManager;
 
 	sf::RenderTexture* m_backdropTexture;
 	sf::Sprite m_backdrop;
 
-	// Movement
+	// Movement.
 	sf::RectangleShape m_titleBar;
 	sf::Vector2f m_moveMouseLast;
 	bool m_showTitleBar;
@@ -83,7 +83,7 @@ private:
 	bool m_beingMoved;
 	bool m_focused;
 
-	// Variable size
+	// Variable size.
 	void AdjustContentSize(const GUI_Element* l_reference = nullptr);
 	void SetContentSize(const sf::Vector2f& l_vec);
 	sf::RenderTexture* m_contentTexture;
@@ -93,7 +93,7 @@ private:
 	int m_scrollVertical;
 	bool m_contentRedraw;
 
-	// Control layer
+	// Control layer.
 	sf::RenderTexture* m_controlTexture;
 	sf::Sprite m_control;
 	bool m_controlRedraw;

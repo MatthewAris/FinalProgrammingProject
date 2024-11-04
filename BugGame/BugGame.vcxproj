@@ -155,7 +155,7 @@
   <ItemGroup>
     <ClCompile Include="Anim_Base.cpp" />
     <ClCompile Include="Anim_Directional.cpp" />
-    <ClCompile Include="EntityManager.cpp" />
+    <ClCompile Include="Entity_Manager.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GUI_Element.cpp" />
@@ -169,6 +169,7 @@
     <ClCompile Include="Message.h" />
     <ClCompile Include="SpriteSheet.cpp" />
     <ClCompile Include="State_GameOver.cpp" />
+    <ClCompile Include="System_Manager.cpp" />
     <ClCompile Include="S_Collision.cpp" />
     <ClCompile Include="S_Control.cpp" />
     <ClCompile Include="S_Movement.cpp" />
@@ -179,7 +180,6 @@
     <ClCompile Include="State_Intro.cpp" />
     <ClCompile Include="State_MainMenu.cpp" />
     <ClCompile Include="State_Paused.cpp" />
-    <ClCompile Include="SystemManager.cpp" />
     <ClCompile Include="S_Base.cpp" />
     <ClCompile Include="S_Renderer.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -203,9 +203,9 @@
     <ClInclude Include="ECS_Types.h" />
     <ClInclude Include="EntityEvents.h" />
     <ClInclude Include="EntityMessages.h" />
-    <ClInclude Include="EntityManager.h" />
+    <ClInclude Include="Entity_Manager.h" />
     <ClInclude Include="EventManager.h" />
-    <ClInclude Include="EventQueue.h" />
+    <ClInclude Include="Event_Queue.h" />
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GUI_Element.h" />
@@ -219,11 +219,11 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="Observer.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SharedContext.h" />
     <ClInclude Include="SpriteSheet.h" />
     <ClInclude Include="State_GameOver.h" />
+    <ClInclude Include="System_Manager.h" />
     <ClInclude Include="S_Collision.h" />
     <ClInclude Include="S_Control.h" />
     <ClInclude Include="S_Movement.h" />
@@ -234,7 +234,6 @@
     <ClInclude Include="State_Intro.h" />
     <ClInclude Include="State_MainMenu.h" />
     <ClInclude Include="State_Paused.h" />
-    <ClInclude Include="SystemManager.h" />
     <ClInclude Include="S_Base.h" />
     <ClInclude Include="S_Renderer.h" />
     <ClInclude Include="TextureManager.h" />
@@ -243,9 +242,6 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BugGame.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
