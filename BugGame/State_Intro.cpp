@@ -30,6 +30,7 @@ void State_Intro::OnCreate(){
 		GetContext()->m_eventManager;
 	evMgr->AddCallback(StateType::Intro,"Intro_Continue",
 		&State_Intro::Continue,this);
+	m_stateMgr->GetContext()->m_soundManager->PlayMusic("TownTheme", 50.f, true);
 }
 
 void State_Intro::OnDestroy(){

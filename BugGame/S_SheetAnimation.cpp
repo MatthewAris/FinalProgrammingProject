@@ -24,21 +24,28 @@ void S_SheetAnimation::Update(float l_dT){
 
 		const std::string& animName = sheet->GetSpriteSheet()->GetCurrentAnim()->GetName();
 		if(animName == "Attack"){
-			if(!sheet->GetSpriteSheet()->GetCurrentAnim()->IsPlaying())
-			{
+			if(!sheet->GetSpriteSheet()->GetCurrentAnim()->IsPlaying()) {
 				Message msg((MessageType)EntityMessage::Switch_State);
 				msg.m_receiver = entity;
 				msg.m_int = (int)EntityState::Idle;
 				m_systemManager->GetMessageHandler()->Dispatch(msg);
-			} else if(sheet->GetSpriteSheet()->GetCurrentAnim()->IsInAction())
-			{
+			} 
+			else if(sheet->GetSpriteSheet()->GetCurrentAnim()->IsInAction()) {
 				Message msg((MessageType)EntityMessage::Attack_Action);
 				msg.m_sender = entity;
 				m_systemManager->GetMessageHandler()->Dispatch(msg);
 			}
-		} else if(animName == "Death" && !sheet->GetSpriteSheet()->GetCurrentAnim()->IsPlaying()){
+		} 
+		else if (animName == "Death" && !sheet->GetSpriteSheet()->GetCurrentAnim()->IsPlaying()) {
 			Message msg((MessageType)EntityMessage::Dead);
 			msg.m_receiver = entity;
+			m_systemManager->GetMessageHandler()->Dispatch(msg);
+		}
+		if (sheet->GetSpriteSheet()->GetCurrentAnim()->CheckMoved()) {
+			int frame = sheet->GetSpriteSheet()->GetCurrentAnim()->GetFrame();
+			Message msg((MessageType)EntityMessage::Frame_Change);
+			msg.m_receiver = entity;
+			msg.m_int = frame;
 			m_systemManager->GetMessageHandler()->Dispatch(msg);
 		}
 	}

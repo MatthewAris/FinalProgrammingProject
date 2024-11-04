@@ -8,6 +8,7 @@ SystemManager::SystemManager(): m_entityManager(nullptr){
 	m_systems[System::Collision] = new S_Collision(this);
 	m_systems[System::SheetAnimation] = new S_SheetAnimation(this);
 	m_systems[System::Renderer] = new S_Renderer(this);
+	m_systems[System::Sound] = new S_Sound(this);
 }
 
 SystemManager::~SystemManager(){

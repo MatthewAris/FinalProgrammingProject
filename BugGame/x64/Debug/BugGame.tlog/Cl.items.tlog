@@ -1,5 +1,7 @@
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Anim_Base.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\Anim_Base.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Anim_Directional.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\Anim_Directional.obj
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\C_SoundEmitter.h;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\C_SoundEmitter.obj
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\C_SoundListener.h;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\C_SoundListener.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Entity_Manager.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\Entity_Manager.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\EventManager.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\EventManager.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Game.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\Game.obj
@@ -12,6 +14,7 @@ C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\GUI_Textfield.cpp;
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\main.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\main.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Map.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\Map.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\Message.h;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\Message.obj
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SoundManager.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\SoundManager.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\SpriteSheet.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\SpriteSheet.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_GameOver.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\State_GameOver.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\System_Manager.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\System_Manager.obj
@@ -19,6 +22,7 @@ C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\S_Collision.cpp;C:
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\S_Control.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\S_Control.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\S_Movement.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\S_Movement.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\S_SheetAnimation.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\S_SheetAnimation.obj
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\S_Sound.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\S_Sound.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\S_State.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\S_State.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\StateManager.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\StateManager.obj
 C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp;C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\x64\Debug\State_Game.obj

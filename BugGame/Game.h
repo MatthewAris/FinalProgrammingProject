@@ -26,6 +26,8 @@ private:
 	Window m_window;
 	TextureManager m_textureManager;
 	FontManager m_fontManager;
+	AudioManager m_audioManager;
+	SoundManager m_soundManager;
 	SystemManager m_systemManager;
 	EntityManager m_entityManager;
 	GUI_Manager m_guiManager;

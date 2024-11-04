@@ -1,2 +1,22 @@
-﻿  LINK : C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\x64\Debug\BugGame.exe not found or not built by the last incremental link; performing full link
+﻿  State_Game.cpp
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(20,29): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(20,29): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(20,29): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(20,29): warning C4244:             T=unsigned int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(20,29): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(20,21): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(20,21): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(20,21): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(20,21): warning C4244:             T=unsigned int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(20,21): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(21,38): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(21,38): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(21,38): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(21,38): warning C4244:             T=unsigned int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(21,38): warning C4244:         ]
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(21,26): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(21,26): warning C4244:         with
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(21,26): warning C4244:         [
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(21,26): warning C4244:             T=unsigned int
+C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\BugGame\State_Game.cpp(21,26): warning C4244:         ]
   BugGame.vcxproj -> C:\Users\arism\Desktop\GitHub\FinalProgrammingProject\x64\Debug\BugGame.exe

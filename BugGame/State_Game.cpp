@@ -33,6 +33,8 @@ void State_Game::OnCreate(){
 	GUI_Manager* gui = m_stateMgr->GetContext()->m_guiManager;
 	gui->LoadInterface(StateType::Game, "Test.interface", "Test");
 	gui->GetInterface(StateType::Game, "Test")->SetPosition(sf::Vector2f(32.f, 32.f));
+	
+	//m_stateMgr->GetContext()->m_soundManager->PlayMusic("Electrix", 50.f, true);
 }
 
 void State_Game::OnDestroy(){

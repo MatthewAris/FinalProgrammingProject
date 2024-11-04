@@ -111,7 +111,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>SFML\lib;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;shlwapi.lib;openal32.lib;flac.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -149,12 +149,14 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>SFML\lib;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-audio.lib;sfml-system.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-audio.lib;sfml-system.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;shlwapi.lib;openal32.lib;flac.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Anim_Base.cpp" />
     <ClCompile Include="Anim_Directional.cpp" />
+    <ClCompile Include="C_SoundEmitter.h" />
+    <ClCompile Include="C_SoundListener.h" />
     <ClCompile Include="Entity_Manager.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -167,6 +169,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Message.h" />
+    <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="SpriteSheet.cpp" />
     <ClCompile Include="State_GameOver.cpp" />
     <ClCompile Include="System_Manager.cpp" />
@@ -174,6 +177,7 @@
     <ClCompile Include="S_Control.cpp" />
     <ClCompile Include="S_Movement.cpp" />
     <ClCompile Include="S_SheetAnimation.cpp" />
+    <ClCompile Include="S_Sound.cpp" />
     <ClCompile Include="S_State.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="State_Game.cpp" />
@@ -187,6 +191,7 @@
   <ItemGroup>
     <ClInclude Include="Anim_Base.h" />
     <ClInclude Include="Anim_Directional.h" />
+    <ClInclude Include="AudioManager.h" />
     <ClInclude Include="BaseState.h" />
     <ClInclude Include="Bitmask.h" />
     <ClInclude Include="Communicator.h" />
@@ -221,6 +226,8 @@
     <ClInclude Include="Observer.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SharedContext.h" />
+    <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="SoundProps.h" />
     <ClInclude Include="SpriteSheet.h" />
     <ClInclude Include="State_GameOver.h" />
     <ClInclude Include="System_Manager.h" />
@@ -228,6 +235,7 @@
     <ClInclude Include="S_Control.h" />
     <ClInclude Include="S_Movement.h" />
     <ClInclude Include="S_SheetAnimation.h" />
+    <ClInclude Include="S_Sound.h" />
     <ClInclude Include="S_State.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="State_Game.h" />

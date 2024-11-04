@@ -7,6 +7,7 @@
 #include "S_Control.h"
 #include "S_State.h"
 #include "S_SheetAnimation.h"
+#include "S_Sound.h"
 #include "Event_Queue.h"
 #include "MessageHandler.h"
 #include <unordered_map>

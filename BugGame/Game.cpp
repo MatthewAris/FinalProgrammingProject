@@ -2,7 +2,7 @@
 
 Game::Game() : m_window("Chapter 11", sf::Vector2u(800, 600)),
 	m_entityManager(&m_systemManager, &m_textureManager), m_stateManager(&m_context),
-	m_guiManager(m_window.GetEventManager(), &m_context)
+	m_guiManager(m_window.GetEventManager(), &m_context), m_soundManager(&m_audioManager)
 {
 	m_clock.restart();
 	srand(time(nullptr));
@@ -13,9 +13,13 @@ Game::Game() : m_window("Chapter 11", sf::Vector2u(800, 600)),
 	m_context.m_eventManager = m_window.GetEventManager();
 	m_context.m_textureManager = &m_textureManager;
 	m_context.m_fontManager = &m_fontManager;
+	m_context.m_audioManager = &m_audioManager;
+	m_context.m_soundManager = &m_soundManager;
 	m_context.m_systemManager = &m_systemManager;
 	m_context.m_entityManager = &m_entityManager;
 	m_context.m_guiManager = &m_guiManager;
+
+	m_systemManager.GetSystem<S_Sound>(System::Sound)->SetUp(&m_audioManager, &m_soundManager);
 
 	// Debug:
 	m_systemManager.m_debugOverlay = &m_context.m_debugOverlay;
@@ -35,7 +39,8 @@ Window* Game::GetWindow(){ return &m_window; }
 void Game::Update(){
 	m_window.Update();
 	m_stateManager.Update(m_elapsed);
-	m_context.m_guiManager->Update(m_elapsed.asSeconds());
+	m_guiManager.Update(m_elapsed.asSeconds());
+	m_soundManager.Update(m_elapsed.asSeconds());
 
 	GUI_Event guiEvent;
 	while (m_context.m_guiManager->PollEvent(guiEvent)){

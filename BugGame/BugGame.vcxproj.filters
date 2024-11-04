@@ -58,6 +58,12 @@
     <Filter Include="Source Files\Textures">
       <UniqueIdentifier>{371e9b57-62d4-404a-8536-9a688a5c841a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Audio">
+      <UniqueIdentifier>{207612b2-be1f-4d14-b7c7-c2be560d9a35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Audio">
+      <UniqueIdentifier>{3de5de97-0813-4bf9-9a76-87bae0d81d8f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -149,6 +155,18 @@
     </ClCompile>
     <ClCompile Include="State_GameOver.cpp">
       <Filter>Source Files\StateFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C_SoundEmitter.h">
+      <Filter>Header Files\ECS\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="C_SoundListener.h">
+      <Filter>Header Files\ECS\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Sound.cpp">
+      <Filter>Source Files\ECS\System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -313,6 +331,18 @@
     </ClInclude>
     <ClInclude Include="ResourceManager.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioManager.h">
+      <Filter>Header Files\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundProps.h">
+      <Filter>Header Files\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>Header Files\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Sound.h">
+      <Filter>Header Files\ECS\System</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
