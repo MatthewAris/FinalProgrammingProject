@@ -3,7 +3,6 @@
 #include "EventManager.h"
 #include "StateManager.h"
 #include "TextureManager.h"
-#include "EntityManager.h"
 #include <iostream>
 
 class Game {
@@ -18,7 +17,6 @@ public:
 	sf::Time GetElapsed();
 
 	Window* GetWindow();
-
 private:
 	void RestartClock();
 
@@ -26,8 +24,11 @@ private:
 	sf::Time m_elapsed;
 	SharedContext m_context;
 	Window m_window;
-	EntityManager m_entityManager;
 	TextureManager m_textureManager;
+	FontManager m_fontManager;
+	SystemManager m_systemManager;
+	EntityManager m_entityManager;
+	GUI_Manager m_guiManager;
 	StateManager m_stateManager;
 };
 

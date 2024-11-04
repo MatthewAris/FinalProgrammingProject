@@ -39,7 +39,13 @@ void EventManager::HandleEvent(sf::Event& l_event) {
 		Binding* bind = b_itr.second;
 		for (auto& e_itr : bind->m_events) {
 			EventType sfmlEvent = (EventType)l_event.type;
-			if (e_itr.first != sfmlEvent) { continue; }
+			if (e_itr.first == EventType::GUI_Click ||
+				e_itr.first == EventType::GUI_Release ||
+				e_itr.first == EventType::GUI_Hover ||
+				e_itr.first == EventType::GUI_Leave) 
+			{ 
+				continue; 
+			}
 			if (sfmlEvent == EventType::KeyDown || sfmlEvent == EventType::KeyUp) {
 				if (e_itr.second.m_code == l_event.key.code) {
 					// Matching event/keystroke.
@@ -78,6 +84,36 @@ void EventManager::HandleEvent(sf::Event& l_event) {
 				}
 				++(bind->c);
 			}
+		}
+	}
+}
+
+void EventManager::HandleEvent(GUI_Event& l_event) {
+	for (auto& b_itr : m_bindings) {
+		Binding* bind = b_itr.second;
+		for (auto& e_itr : bind->m_events)
+		{
+			if (e_itr.first != EventType::GUI_Click && e_itr.first != EventType::GUI_Release &&
+				e_itr.first != EventType::GUI_Hover && e_itr.first != EventType::GUI_Leave)
+			{
+				continue;
+			}
+			if ((e_itr.first == EventType::GUI_Click && l_event.m_type != GUI_EventType::Click) ||
+				(e_itr.first == EventType::GUI_Release && l_event.m_type != GUI_EventType::Release) ||
+				(e_itr.first == EventType::GUI_Hover && l_event.m_type != GUI_EventType::Hover) ||
+				(e_itr.first == EventType::GUI_Leave && l_event.m_type != GUI_EventType::Leave))
+			{
+				continue;
+			}
+			// REPLACED WITH STRCMP!
+			if (strcmp(e_itr.second.m_gui.m_interface, l_event.m_interface) ||
+				strcmp(e_itr.second.m_gui.m_element, l_event.m_element))
+			{
+				continue;
+			}
+			bind->m_details.m_guiInterface = l_event.m_interface;
+			bind->m_details.m_guiElement = l_event.m_element;
+			++(bind->c);
 		}
 	}
 }
@@ -141,6 +177,7 @@ void EventManager::LoadBindings()
 
 	std::ifstream bindings;
 	bindings.open(Utils::GetResourceDirectory() + "keys.cfg");
+	if (!bindings.is_open()) { std::cout << "! Failed loading keys.cfg." << std::endl; return; }
 	std::string line;
 	while (std::getline(bindings, line)) {
 		std::stringstream keystream(line);
@@ -158,11 +195,34 @@ void EventManager::LoadBindings()
 			int end = keyval.find(delimiter);
 			if (end == std::string::npos) { delete bind; bind = nullptr; break; }
 			EventType type = EventType(stoi(keyval.substr(start, end - start)));
-			int code = stoi(keyval.substr(end + delimiter.length(),
-				keyval.find(delimiter, end + delimiter.length())));
 
 			EventInfo eventInfo;
-			eventInfo.m_code = code;
+			if (type == EventType::GUI_Click || type == EventType::GUI_Release ||
+				type == EventType::GUI_Hover || type == EventType::GUI_Leave)
+			{
+				start = end + delimiter.length();
+				end = keyval.find(delimiter, start);
+				std::string window = keyval.substr(start, end - start);
+				std::string element;
+				if (end != std::string::npos) {
+					start = end + delimiter.length();
+					end = keyval.length();
+					element = keyval.substr(start, end);
+				}
+				char* w = new char[window.length() + 1]; // +1 for \0
+				char* e = new char[element.length() + 1];
+
+				strcpy(w, window.c_str());
+				strcpy(e, element.c_str());
+
+				eventInfo.m_gui.m_interface = w;
+				eventInfo.m_gui.m_element = e;
+			}
+			else {
+				int code = stoi(keyval.substr(end + delimiter.length(),
+					keyval.find(delimiter, end + delimiter.length())));
+				eventInfo.m_code = code;
+			}
 			bind->BindEvent(type, eventInfo);
 		}
 

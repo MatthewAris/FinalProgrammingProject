@@ -2,14 +2,12 @@
 #include <SFML/Graphics.hpp>
 #include <unordered_map>
 #include <map>
-#include <array>
 #include <fstream>
 #include <sstream>
 #include "Utilities.h"
 #include "SharedContext.h"
-#include "BaseState.h"
 
-enum Sheet { Tile_Size = 32, Sheet_Width = 256, Sheet_Height = 256 };
+enum Sheet { Tile_Size = 32, Sheet_Width = 256, Sheet_Height = 256, Num_Layers = 4 };
 
 using TileID = unsigned int;
 
@@ -49,6 +47,7 @@ struct TileInfo {
 struct Tile {
 	TileInfo* m_properties;
 	bool m_warp; // Is the tile a warp.
+	bool m_solid; // Is the tile a solid.
 	// Other flags unique to each tile.
 };
 
@@ -57,41 +56,40 @@ using TileSet = std::unordered_map<TileID, TileInfo*>;
 
 class Map {
 public:
-	Map(SharedContext* l_context, BaseState* l_currentState);
+	Map(SharedContext* l_context);
 	~Map();
 
-	Tile* GetTile(unsigned int l_x, unsigned int l_y);
+	Tile* GetTile(unsigned int l_x, unsigned int l_y, unsigned int l_layer);
 	TileInfo* GetDefaultTile();
 
-	float GetGravity()const;
 	unsigned int GetTileSize()const;
 	const sf::Vector2u& GetMapSize()const;
 	const sf::Vector2f& GetPlayerStart()const;
+	int GetPlayerId()const;
 
 	void LoadMap(const std::string& l_path);
-	void LoadNext();
 
 	void Update(float l_dT);
-	void Draw();
+	void Draw(unsigned int l_layer);
 private:
 	// Method for converting 2D coordinates to 1D ints.
-	unsigned int ConvertCoords(unsigned int l_x, unsigned int l_y);
+	unsigned int ConvertCoords(unsigned int l_x, unsigned int l_y, unsigned int l_layer) const;
+
 	void LoadTiles(const std::string& l_path);
+
 	void PurgeMap();
 	void PurgeTileSet();
 
 	TileSet m_tileSet;
 	TileMap m_tileMap;
-	sf::Sprite m_background;
+
+
 	TileInfo m_defaultTile;
+
 	sf::Vector2u m_maxMapSize;
 	sf::Vector2f m_playerStart;
+	int m_playerId;
 	unsigned int m_tileCount;
 	unsigned int m_tileSetCount;
-	float m_mapGravity;
-	std::string m_nextMap;
-	bool m_loadNextMap;
-	std::string m_backgroundTexture;
-	BaseState* m_currentState;
 	SharedContext* m_context;
 };

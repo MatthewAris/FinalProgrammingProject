@@ -19,11 +19,38 @@
     <Filter Include="Source Files\StateFiles">
       <UniqueIdentifier>{bf16b444-3baa-4ad0-84ee-1c2c8d0a0081}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Entities">
+    <Filter Include="Header Files\ECS">
+      <UniqueIdentifier>{1229f931-20c5-4f48-b7b5-32108af52b4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ECS\Entities">
+      <UniqueIdentifier>{85512c7c-402f-459a-acc7-4407545903b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ECS\Component">
+      <UniqueIdentifier>{4b32ea7f-2d77-47c5-b655-5be1bb32c49d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS">
+      <UniqueIdentifier>{6e43fedd-4846-442a-84ba-01439bf8a65c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ECS\System">
+      <UniqueIdentifier>{9368b4a5-d65e-4a67-b834-ebc5e026c338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS\System">
+      <UniqueIdentifier>{fa444501-ea2b-476e-af7b-b5b7e448739b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS\Entities">
       <UniqueIdentifier>{5d6970f7-ba00-4c4d-a064-1e1217ee4641}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Entities">
-      <UniqueIdentifier>{85512c7c-402f-459a-acc7-4407545903b3}</UniqueIdentifier>
+    <Filter Include="Header Files\Messaging">
+      <UniqueIdentifier>{a33e2fd0-2374-4291-890b-efe89dfce999}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS\Component">
+      <UniqueIdentifier>{25cc7b0e-36c3-4ed8-b3b3-e1bd139aff73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GUI">
+      <UniqueIdentifier>{eda50506-2fff-40c4-bedb-ba793f46b7dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUI">
+      <UniqueIdentifier>{72380f77-2338-43d5-b19b-c320f92e51eb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -37,9 +64,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EventManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StateManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="State_Intro.cpp">
@@ -66,20 +90,59 @@
     <ClCompile Include="Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EntityBase.cpp">
-      <Filter>Source Files\Entities</Filter>
+    <ClCompile Include="S_Base.cpp">
+      <Filter>Source Files\ECS\System</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemManager.cpp">
+      <Filter>Source Files\ECS\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Message.h">
+      <Filter>Header Files\Messaging</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Renderer.cpp">
+      <Filter>Source Files\ECS\System</Filter>
     </ClCompile>
     <ClCompile Include="EntityManager.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Source Files\ECS\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Character.cpp">
-      <Filter>Source Files\Entities</Filter>
+    <ClCompile Include="S_State.cpp">
+      <Filter>Source Files\StateFiles</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files\Entities</Filter>
+    <ClCompile Include="S_Movement.cpp">
+      <Filter>Source Files\ECS\System</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files\Entities</Filter>
+    <ClCompile Include="StateManager.cpp">
+      <Filter>Source Files\StateFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="S_SheetAnimation.cpp">
+      <Filter>Source Files\ECS\System</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Control.cpp">
+      <Filter>Source Files\ECS\System</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Collision.cpp">
+      <Filter>Source Files\ECS\System</Filter>
+    </ClCompile>
+    <ClCompile Include="State_GameOver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI_Element.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI_Interface.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI_Manager.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI_Label.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI_Textfield.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI_Scrollbar.cpp">
+      <Filter>Source Files\GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -90,9 +153,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EventManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StateManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SharedContext.h">
@@ -140,28 +200,124 @@
     <ClInclude Include="Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EntityManager.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="EntityBase.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="DebugOverlay.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Base.h">
+      <Filter>Header Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS_Types.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Position.h">
+      <Filter>Header Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitmask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityEvents.h">
+      <Filter>Header Files\ECS\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="EventQueue.h">
+      <Filter>Header Files\ECS\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Base.h">
+      <Filter>Header Files\ECS\System</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemManager.h">
+      <Filter>Header Files\ECS\System</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageHandler.h">
+      <Filter>Header Files\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>Header Files\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="Communicator.h">
+      <Filter>Header Files\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityMessages.h">
+      <Filter>Header Files\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Drawable.h">
+      <Filter>Header Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="C_SpriteSheet.h">
+      <Filter>Header Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Renderer.h">
+      <Filter>Header Files\ECS\System</Filter>
+    </ClInclude>
+    <ClInclude Include="S_State.h">
+      <Filter>Header Files\State Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C_State.h">
+      <Filter>Header Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Movable.h">
+      <Filter>Header Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Movement.h">
+      <Filter>Header Files\ECS\System</Filter>
+    </ClInclude>
+    <ClInclude Include="StateManager.h">
+      <Filter>Header Files\State Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Controller.h">
+      <Filter>Header Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Control.h">
+      <Filter>Header Files\ECS\System</Filter>
+    </ClInclude>
+    <ClInclude Include="S_SheetAnimation.h">
+      <Filter>Header Files\ECS\System</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Collidable.h">
+      <Filter>Header Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityManager.h">
+      <Filter>Header Files\ECS\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Collision.h">
+      <Filter>Header Files\ECS\System</Filter>
+    </ClInclude>
+    <ClInclude Include="State_GameOver.h">
+      <Filter>Header Files\State Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI_Style.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="FontManager.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI_Element.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI_Event.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI_Interface.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI_Manager.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI_Label.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI_Textfield.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI_Scrollbar.h">
+      <Filter>Header Files\GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BugGame.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

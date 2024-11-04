@@ -19,7 +19,13 @@ public:
 
 	void MainMenu(EventDetails* l_details);
 	void Pause(EventDetails* l_details);
+	void PlayerMove(EventDetails* l_details);
+
+	// Debug:
 	//void ToggleOverlay(EventDetails* l_details);
 private:
+	void UpdateCamera();
+
 	Map* m_gameMap;
+	int m_player;
 };

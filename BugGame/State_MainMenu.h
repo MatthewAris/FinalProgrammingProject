@@ -13,10 +13,11 @@ public:
 	void Activate();
 	void Deactivate();
 
+	void Play(EventDetails* l_details); // Callback
+	void Quit(EventDetails* l_details); // Callback
+
 	void Update(const sf::Time& l_time);
 	void Draw();
-
-	void MouseClick(EventDetails* l_details);
 private:
 	sf::Font m_font;
 	sf::Text m_text;
